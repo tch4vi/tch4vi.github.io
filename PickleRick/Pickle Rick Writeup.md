@@ -6,7 +6,7 @@ To start working on the machine, I did the standard enumeration process with nma
 -sS -> To perform a TCP SYN scan (half-open). Sends SYN packets, doesn't complete the three-way handshake, is faster and generates less logs
 -Pn -> Disable the host discovery and assume that the host is active
 
-![Nmap](Images/Pasted+image+20260109154859.png)
+![Nmap](Images/Pasted image 20260109154859.png)
 
 Now, that we get the port 22 and the port 80 open, I tend to perform a second scan to get more information about the active ports:
 
