@@ -49,7 +49,7 @@ Found the /assets directory, but there is nothing that caught my eye there so I 
 
 `R1ckRul3s`
 
-I got the username: R1ckRul3s. At this point I still don't know where we can use it.
+I got an username: R1ckRul3s.
 Although I used feroxbuster to identify directories and paths and found nothing, I started trying some common directories based in common web application patterns like /panel.php, /login.php /portal.php /robots.txt and found the login page and a strange string stored in the robots.txt
 
 ![PickleRick](/assets/PickleRick/robotstxt.png)
