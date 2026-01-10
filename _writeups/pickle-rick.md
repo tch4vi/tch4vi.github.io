@@ -10,7 +10,7 @@ To start working on the machine, I did the standard enumeration process with nma
 `-Pn` -> Disable the host discovery and assume that the host is active
 
 
-![PickleRick](assets/PickleRick/nmap1.png)
+![PickleRick](/assets/PickleRick/nmap1.png)
 
 Now, that we get the port 22 and the port 80 open, I tend to perform a second scan to get more information about the active ports:
 
