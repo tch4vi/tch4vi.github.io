@@ -1,0 +1,8 @@
+title: tch4vi
+description: Pentesting writeups & learning notes
+theme: null
+
+collections:
+  writeups:
+    output: true
+    permalink: /writeups/:name/
