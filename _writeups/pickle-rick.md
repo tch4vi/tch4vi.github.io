@@ -127,7 +127,7 @@ Some key commands to do privilege escalation is the `sudo -l`one, it shows all t
 
 `ALL` -> Any command
 
-This grants full root privileges to the current user.
+After seeing that, I can use super user permissions with the current user www-data and no password is required.
 
 `sudo ls -la /root`
 
