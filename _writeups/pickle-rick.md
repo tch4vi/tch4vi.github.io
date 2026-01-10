@@ -1,3 +1,9 @@
+---
+layout: writeup
+title: "Pickle Rick – TryHackMe"
+date: 2026-01-09
+platform: TryHackMe
+---
 On today's hacking, i've worked on Pickle Rick, a machine located in TryHackMe platform that shows some clear web vulnerabilities. It's very easy to digest, entertaining and it's themed as Rick & Morty which I love.
 To start working on the machine, I did the standard enumeration process with nmap:
 
