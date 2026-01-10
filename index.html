@@ -7,41 +7,45 @@
 </head>
 <body>
 
-  <div class="container">
-    <header>
-      <h1>tch4vi</h1>
-      <p>Pentesting writeups & learning notes</p>
-    </header>
+  <div class="layout">
 
-    <main>
-      <section>
-        <h2>Latest writeup</h2>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <h1>tch4vi</h1>
+      <p class="subtitle">Pentesting writeups</p>
+
+      <nav>
         <ul>
-          <li>
-            <a href="PickleRick/PickleRickWriteup.md">
-              Pickle Rick – TryHackMe
-            </a>
-          </li>
+          <li><a href="#">Home</a></li>
+          <li><a href="PickleRick/PickleRickWriteup.md">Pickle Rick</a></li>
         </ul>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <main class="content">
+
+      <section>
+        <h2>🆕 Latest writeup</h2>
+        <article class="card">
+          <h3>Pickle Rick – TryHackMe</h3>
+          <p>
+            Introductory web exploitation and privilege escalation machine.
+          </p>
+          <a href="PickleRick/PickleRickWriteup.md">Read writeup →</a>
+        </article>
       </section>
 
       <section>
-        <h2>All writeups</h2>
+        <h2>📚 All writeups</h2>
         <ul>
           <li><a href="PickleRick/PickleRickWriteup.md">Pickle Rick – TryHackMe</a></li>
         </ul>
       </section>
 
-      <section>
-        <h2>About</h2>
-        <p>
-          This site documents my learning process in offensive security,
-          focusing on methodology, reasoning, and hands-on practice.
-        </p>
-      </section>
     </main>
+
   </div>
 
 </body>
-
 </html>
