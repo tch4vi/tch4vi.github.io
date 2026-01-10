@@ -7,12 +7,18 @@ title: Home
   <h2>Latest writeup</h2>
 
   {% assign latest = site.writeups | sort: "date" | last %}
-  <div class="card">
+  <article class="writeup-preview">
     <h3>{{ latest.title }}</h3>
-    <p>{{ latest.platform }}</p>
-    <a href="{{ latest.url }}">Read writeup →</a>
-  </div>
+    <p class="meta">{{ latest.platform }} · {{ latest.date | date: "%B %d, %Y" }}</p>
+
+    {{ latest.excerpt }}
+
+    <p>
+      <a href="{{ latest.url }}">Read full writeup →</a>
+    </p>
+  </article>
 </section>
+
 
 <section>
   <h2>All writeups</h2>
