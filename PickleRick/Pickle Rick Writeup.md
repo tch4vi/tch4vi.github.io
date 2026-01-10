@@ -14,7 +14,7 @@ Now, that we get the port 22 and the port 80 open, I tend to perform a second sc
 -p22,80 -> Specify the ports
 -sCV -> Use default nmap scripts and the version of the software detected
 
-![[nmap2.png]]
+![nmap](nmap2.png)
 
 After the nmap scans, I wanted to see what the port 80 was offering me and found this image and the description that specifies that we will need to find three ingredients, those ingredients work as flags to capture.
 
