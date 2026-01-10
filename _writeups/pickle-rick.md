@@ -19,7 +19,7 @@ To start working on the machine, I did the standard enumeration process with nma
 ![PickleRick](/assets/PickleRick/nmap1.png)
 
 Now, that we get the port 22 and the port 80 open, I tend to perform a second scan to get more information about the active ports:
-
+<!--more-->
 `nmap -p22,80 -sCV 10.67.188.134`
 
 `-p22,80` -> Specify the ports
