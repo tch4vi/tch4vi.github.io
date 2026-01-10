@@ -1,0 +1,12 @@
+---
+layout: default
+---
+
+<article class="writeup">
+  <h1>{{ page.title }}</h1>
+  <p class="meta">
+    {{ page.platform }} · {{ page.date | date: "%B %d, %Y" }}
+  </p>
+
+  {{ content }}
+</article>
