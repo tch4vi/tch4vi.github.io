@@ -100,7 +100,7 @@ But that is totally different with command `less`, this command is not disabled,
 
 ![PickleRick](/assets/PickleRick/less1.png)
 
-Moving on trying to find the second ingredient, I moved around the directories. I could have spawned a reverse shell but this webshell seemed Ok to me to keep working. Using `ls -la /home` I found 2 directories from 2 different users, `rick` and `ubuntu`, the one that got my attention was user `rick` 
+Moving on trying to find the second ingredient, I moved around the directories. I could have spawned a reverse shell but this webshell seemed Ok to me to keep working. Using `ls -la /home` I found two directories from two different users, `rick` and `ubuntu`, the one that got my attention was user `rick` 
 
 `ls -la /home`
 
@@ -110,14 +110,14 @@ Moving on trying to find the second ingredient, I moved around the directories. 
 
 ![PickleRick](/assets/PickleRick/lslahomerick.png)
 
-I found the second ingredient, applying the same logic with the first one, the command `less`gave me the information I needed to complete the machine:
+I found the second ingredient, applying the same logic with the first one, the command `less` gave me the information I needed to complete the machine:
 
 `less /home/rick/"second ingredients`
 
 ![PickleRick](/assets/PickleRick/less2.png)
 
-The last step to complete the machine, the third ingredient, I was sure that it had to be on the `/root`folder, but as shown in previous captures, I get no results. 
-Some key commands to do privilege escalation is the `sudo -l`one, it shows all the commands that the current user can use as super user. In this case we can use everything.
+The last step to complete the machine, the third ingredient, I was sure that it had to be on the `/root` folder, but as shown in previous captures, I get no results. 
+Some key commands to do privilege escalation is the `sudo -l` one, it shows all the commands that the current user can use as super user. In this case we can use everything.
 
 `sudo -l`
 
