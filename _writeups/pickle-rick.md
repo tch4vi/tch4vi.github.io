@@ -43,6 +43,7 @@ After the nmap scans, I wanted to see what the port 80 was offering me and found
 Found the /assets directory, but there is nothing that caught my eye there so I keep digging on the main page. The page itself doesn't offer much to do besides viewing the source page, where I found a username:
 
 ![PickleRick](/assets/PickleRick/sourcepage.png)
+
 ![PickleRick](/assets/PickleRick/username.png)
 
 `R1ckRul3s`
@@ -54,7 +55,9 @@ Although I used feroxbuster to identify directories and paths and found nothing,
 
 `Wubbalubbadubdub`
 
+
 Login page:
+
 ![PickleRick](/assets/PickleRick/loginpage.png)
 
 
@@ -75,7 +78,7 @@ I'm using www-data, which was expected, then proceed to list directories and fil
 
 ![PickleRick](/assets/PickleRick/lsla.png)
 
-Here happens something interesting, when you try to use `cat`, `more` or `head` you get this Mr.Meeseek gif and the text description saying that the command is disabled. The interesting part is that, this is not the outcome when you try to use a command where you don't have permissions, so these commands `cat`, `more`and `head`are manually disabled:
+Here happens something interesting, when you try to use `cat`, `more` or `head` you get this Mr.Meeseek gif and the text description saying that the command is disabled. The interesting part is that, this is not the outcome when you try to use a command where you don't have permissions, so these commands `cat`, `more` and `head` are manually disabled:
 
 `cat Sup3rS3cretPickl3Ingred.txt`
 
@@ -88,7 +91,7 @@ Here happens something interesting, when you try to use `cat`, `more` or `head` 
 
 This is the outcome when you try to use `ls /root` for example, you get no results because you don't have permissions:
 
-![PickleRick](assets/PickleRick/nopermissions.png)
+![PickleRick](/assets/PickleRick/nopermissions.png)
 
 But that is totally different with command `less`, this command is not disabled, it works and shows the first ingredient
 
@@ -136,4 +139,4 @@ This grants full root privileges to the current user.
 Completed the machine. Entertaining and easy to digest
 
 
-![PickleRick](/assets/completed.png)
+![PickleRick](/assets/PickleRick/completed.png)
