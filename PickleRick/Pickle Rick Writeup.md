@@ -1,24 +1,24 @@
 On today's hacking, i've worked on Pickle Rick, a machine located in TryHackMe platform that shows some clear web vulnerabilities. It's very easy to digest, entertaining and it's themed as Rick & Morty which I love.
 To start working on the machine, I did the standard enumeration process with nmap:
 
-``nmap -p- -sS -Pn 10.67.188.134``
+`nmap -p- -sS -Pn 10.67.188.134`
 
--p- -> To scan all ports
+`-p-` -> To scan all ports
 
--sS -> To perform a TCP SYN scan (half-open). Sends SYN packets, doesn't complete the three-way handshake, is faster and generates less logs
+`-sS` -> To perform a TCP SYN scan (half-open). Sends SYN packets, doesn't complete the three-way handshake, is faster and generates less logs
 
--Pn -> Disable the host discovery and assume that the host is active
+`-Pn` -> Disable the host discovery and assume that the host is active
 
 
 ![PickleRick](Images/nmap1.png)
 
 Now, that we get the port 22 and the port 80 open, I tend to perform a second scan to get more information about the active ports:
 
-``nmap -p22,80 -sCV 10.67.188.134``
+`nmap -p22,80 -sCV 10.67.188.134`
 
--p22,80 -> Specify the ports
+`-p22,80` -> Specify the ports
 
--sCV -> Use default nmap scripts and the version of the software detected
+`-sCV` -> Use default nmap scripts and the version of the software detected
 
 
 ![PickleRick](Images/nmap2.png)
@@ -29,7 +29,8 @@ After the nmap scans, I wanted to see what the port 80 was offering me and found
 
  
  Here I wanted to check if I could get some directories information with Feroxbuster tool. Works similar as the dirbuster, gobuster..:
-``feroxbuster -u http://10.67.188.134/``
+ 
+`feroxbuster -u http://10.67.188.134/`
 
 ![PickleRick](Images/feroxbuster.png)
 
@@ -37,14 +38,15 @@ Found the /assets directory, but there is nothing that caught my eye there so I 
 
 ![PickleRick](Images/sourcepage.png)
 ![PickleRick](Images/username.png)
-``R1ckRul3s``
+
+`R1ckRul3s`
 
 I got the username: R1ckRul3s. At this point I still don't know where we can use it.
 Although I used feroxbuster to identify directories and paths and found nothing, I started trying some common directories based in common web application patterns like /panel.php, /login.php /portal.php /robots.txt and found the login page and a strange string stored in the robots.txt
 
 ![PickleRick](Images/robotstxt.png)
 
-``Wubbalubbadubdub``
+`Wubbalubbadubdub`
 
 Login page:
 ![PickleRick](Images/loginpage.png)
@@ -128,4 +130,4 @@ This grants full root privileges to the current user.
 Completed the machine. Entertaining and easy to digest
 
 
-![[completed.png]]
+![PickleRick](Images/completed.png)
