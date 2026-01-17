@@ -15,7 +15,7 @@ I've started with the meta start of the CTF challenges, which is the enumeration
 
 `-sS` -> To perform a TCP SYN scan (half-open). Sends SYN packets, doesn’t complete the three-way handshake, is faster and generates less logs
 
-`-Pn` -> Disabel the host discovery and assume that the host is active
+`-Pn` -> Disable the host discovery and assume that the host is active
 
 
 After the enumeration with nmap and seeing the port http 80 open, I've tried to access the web and that's what I see: A corridor. Now the name of the challenge makes sense.
