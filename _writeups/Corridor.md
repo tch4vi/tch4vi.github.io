@@ -12,7 +12,9 @@ I've started with the meta start of the CTF challenges, which is the enumeration
 ![Corridor](/assets/Corridor/nmap.png)
 
 `-p-` -> To cover all ports
+
 `-sS` -> To perform a TCP SYN scan (half-open). Sends SYN packets, doesn’t complete the three-way handshake, is faster and generates less logs
+
 `-Pn` -> Disabel the host discovery and assume that the host is active
 
 
@@ -37,19 +39,22 @@ After knowing that all those strings are hashes, I wanted to use hashcat, so I d
 `hashcat -m 0 hash.txt /usr/share/wordlists/rockyou.txt`
 
 `-m 0` -> md5
+
 `usr/share/wordlists/rockyou.txt` -> Path to rockyou.txt wordlist
 
 ![Corridor](/assets/Corridor/hashcat.png)
 
 `hashcat -m 0 --show hash.txt`
+
 `-m 0` -> md5
+
 `--show` -> Show previous results
 
 ![Corridor](/assets/Corridor/hashcatshow.png)
 
 After the hashcat results, seems like all those hashes are related to numbers from 1 to 13. To check if that is the correct answer we can try the following:
 
-`echo -n "7" | md5sum
+`echo -n "7" | md5sum`
 
 ![Corridor](/assets/Corridor/echotest1.png)
 
@@ -58,6 +63,7 @@ We get the same string. So let's check with some other numbers, let's try with t
 `echo -n "14" | md5sum`
 
 `-n` -> No line skip
+
 `md5sum` -> Calculate the hash
 
 ![Corridor](/assets/Corridor/echotest2.png)
@@ -71,6 +77,7 @@ Let's try with the 0 now:
 `echo -n "0" | md5sum`
 
 `-n` -> No line skip
+
 `md5sum` -> Calculate the hash
 
 ![Corridor](/assets/Corridor/flag.png)
