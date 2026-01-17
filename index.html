@@ -25,16 +25,16 @@ title: Home
 
 <section>
   <h2>All writeups</h2>
-    <ul class="writeup-list">
+    <div class="writeups-grid">
       {% for w in site.writeups %}
-      <li>
-        <a href="{{ w.url }}" class="writeup-link">
-          {{ w.title }}
-        </a>
-        <span class="platform">{{ w.platform }}</span>
-      </li>
+      <div class="writeup-card">
+        <h3>{{ w.title }}</h3>
+        <p class="meta">{{ w.platform }}</p>
+        <a href="{{ w.url }}" class="read-more">Read writeup →</a>
+      </div>
       {% endfor %}
-    </ul>
+    </div>
+
 
 
 </section>
