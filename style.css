@@ -76,7 +76,6 @@ section {
   text-decoration: underline;
 }
 
-
 .writeups-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -89,7 +88,6 @@ section {
   border-radius: 10px;
   padding: 1rem;
 }
-
 
 
 .read-more {
