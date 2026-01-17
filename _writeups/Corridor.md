@@ -29,7 +29,7 @@ Each door of the corridor is like a directory, you can open them and see what's 
 
 <img src="/assets/Corridor/roomshow.png" alt="roomshow" style="width:60%;">
 
-This string `8f14e45fceea167a5a36dedd4bea2543`, at first I thought that was encoded as hexadecimal, and I even used CyberChef to try to see if something is hiding inside that string, but, then, you don't have to goo that far, just check the description of the room to see that it's a hash, and tools like JohnTheRipper or Hashcat will be our best allies instead of CyberChef.
+This string `8f14e45fceea167a5a36dedd4bea2543`, at first I thought that was encoded as hexadecimal, and I even used CyberChef to try to see if something is hiding inside that string, but, then, you don't have to go that far, just check the description of the room to see that it's a hash, and tools like JohnTheRipper or Hashcat will be our best allies instead of CyberChef.
 
 ![Corridor](/assets/Corridor/tryhackmedesc.png)
 
@@ -60,7 +60,7 @@ After the hashcat results, seems like all those hashes are related to numbers fr
 
 ![Corridor](/assets/Corridor/echotest1.png)
 
-We get the same string. So let's check with some other numbers, let's try with the 14 for example, and using the 
+We get the same string. So let's check with some other numbers, let's try with the 14 for example:
 
 `echo -n "14" | md5sum`
 
