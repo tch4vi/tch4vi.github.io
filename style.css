@@ -75,3 +75,10 @@ section {
 .card a:hover {
   text-decoration: underline;
 }
+
+.post-content img {
+  max-width: 70%;
+  height: auto;
+  display: block;
+  margin: 1.5em auto;
+}
