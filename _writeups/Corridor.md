@@ -85,7 +85,8 @@ Let's try with the 0 now:
 <img src="/assets/Corridor/flag.png" alt="flag" style="width:70%;">
 
 Voilà!
-Here is the flag. The clue to discover the flag was the pattern that all the rooms had, they were numbered from 1 to 13, and in most of the cases, boundary values like 0 are often overlooked by developers and are worth testing
+Here is the flag. The clue to discover the flag was the pattern that all the rooms had, they were numbered from 1 to 13, and in most of the cases, boundary values like 0 are often overlooked by developers and are worth testing.
+
 The important point is not the number 0 itself, but the fact that the backend trusted the identifier without checking if it should be accessible.
 The lesson learned here is that, If an application is using predictable identifiers and doesn't validate the authorization in the backend, there is an IDOR. Hash ≠ secret.
 Never trust identifiers that are obfuscated as a security mechanism. If the backend doesn't validate the authorization over the objects, it's enough by knowing the pattern of the identificators to access resources that are exposed (IDOR). That's what happened with the doors, we identified the hashes, we identified that they were numbered, identified the pattern, tried to access one that at first isn't exposed and found the flag.
