@@ -75,3 +75,21 @@ section {
 .card a:hover {
   text-decoration: underline;
 }
+
+.read-more {
+  display: inline-block;
+  margin-top: 0.8rem;
+  padding: 0.55em 1.1em;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #6a5acd, #7b68ee);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.read-more:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(123,104,238,0.35);
+}
