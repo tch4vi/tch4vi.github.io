@@ -9,7 +9,7 @@ On today's hacking, I've been working in one small hacking challenge that TryHac
 
 I've started with the meta start of the CTF challenges, which is the enumeration with nmap. When you first enter the description of the room makes you expect a web with some path traversal vulnerabilities, that is what I was expecting. So after using the command `nmap -p- -sS -Pn 10.65.150.204` I was expecting the port 80 open:
 
-![/assets/Corridor/nmap.png]
+![Corridor][/assets/Corridor/nmap.png]
 
 `-p-` -> To cover all ports
 `-sS` -> To perform a TCP SYN scan (half-open). Sends SYN packets, doesn’t complete the three-way handshake, is faster and generates less logs
