@@ -1,4 +1,9 @@
-
+---
+layout: writeup
+title: "Corridor – TryHackMe"
+date: 2026-01-17
+platform: TryHackMe
+---
 On today's hacking, I've been working in one small hacking challenge that TryHackMe has. They have some small hacking rooms that offer good concepts to learn in an entertaining way. Today, the room is called "Corridor", working on that room will teach us some learnings on IDOR's, hashing and more. Let's see:
 
 
