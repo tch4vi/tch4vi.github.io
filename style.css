@@ -38,8 +38,9 @@ body {
 }
 
 .sidebar nav a {
-  color: #7b68ee;
+  font-weight: 500;
   text-decoration: none;
+  color: #7b68ee;
 }
 
 .sidebar nav a:hover {
