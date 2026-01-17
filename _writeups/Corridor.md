@@ -20,14 +20,14 @@ I've started with the meta start of the CTF challenges, which is the enumeration
 
 After the enumeration with nmap and seeing the port http 80 open, I've tried to access the web and that's what I see: A corridor. Now the name of the challenge makes sense.
 
-![Corridor](/assets/Corridor/corridorshow.png)
 
-<img src="/assets/Corridor/corridorshow.png" alt="Nmap result" style="width:70%;">
+<img src="/assets/Corridor/corridorshow.png" alt="corridorshow" style="width:70%;">
 
 Each door of the corridor is like a directory, you can open them and see what's inside. All the doors offer the same, an empty room with the same pattern on the URL:
 `http://10.65.150.204/8f14e45fceea167a5a36dedd4bea2543`
 <!--more-->
-![Corridor](/assets/Corridor/roomshow.png)
+
+<img src="/assets/Corridor/roomshow.png" alt="roomshow" style="width:70%;">
 
 This string `8f14e45fceea167a5a36dedd4bea2543`, at first I thought that was encoded as hexadecimal, and I even used CyberChef to try to see if something is hiding inside that string, but, then, you don't have to goo that far, just check the description of the room to see that it's a hash, and tools like JohnTheRipper or Hashcat will be our best allies instead of CyberChef.
 
@@ -82,7 +82,7 @@ Let's try with the 0 now:
 
 `md5sum` -> Calculate the hash
 
-![Corridor](/assets/Corridor/flag.png)
+<img src="/assets/Corridor/flag.png" alt="flag" style="width:70%;">
 
 Voilà!
 Here is the flag. The clue to discover the flag was the pattern that all the rooms had, they were numbered from 1 to 13, and in most of the cases, boundary values like 0 are often overlooked by developers and are worth testing
