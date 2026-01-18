@@ -22,7 +22,7 @@ Each door of the corridor is like a directory, you can open them and see what's 
 
 This string `8f14e45fceea167a5a36dedd4bea2543`, at first I thought that was encoded as hexadecimal, and I even used CyberChef to try to see if something is hiding inside that string, but, then, you don't have to goo that far, just check the description of the room to see that it's a hash, and tools like JohnTheRipper or Hashcat will be our best allies instead of CyberChef.
 
-![Corridor](Images/tryhackmedesc.png])
+![Corridor](Images/tryhackmedesc.png)
 
 After knowing that all those strings are hashes, I wanted to use hashcat, so I decided to add all the hashes into one single file to work on all of them and see if there is any pattern recognizable:
 
