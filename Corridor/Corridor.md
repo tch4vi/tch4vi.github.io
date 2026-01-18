@@ -4,7 +4,7 @@ On today's hacking, I've been working in one small hacking challenge that TryHac
 
 I've started with the meta start of the CTF challenges, which is the enumeration with nmap. When you first enter into the challenge the description of the room makes you expect a web with some path traversal vulnerabilities, that is what I was expecting. So after using the command `nmap -p- -sS -Pn 10.65.150.204` I was expecting the port 80 open:
 
-![[nmap.png]]
+![Corridor](assets/Corridor/nmap.png)
 
 `-p-` -> To cover all ports
 `-sS` -> To perform a TCP SYN scan (half-open). Sends SYN packets, doesn’t complete the three-way handshake, is faster and generates less logs
@@ -13,7 +13,7 @@ I've started with the meta start of the CTF challenges, which is the enumeration
 
 After the enumeration with nmap and seeing the port http 80 open, I've tried to access the web and that's what I see: A corridor. Now the name of the challenge makes sense.
 
-![Corridor](corridorshow.png)
+![Corridor](assets/Corridor/corridorshow.png)
 
 Each door of the corridor is like a directory, you can open them and see what's inside. All the doors offer the same, an empty room with the same pattern on the URL:
 `http://10.65.150.204/8f14e45fceea167a5a36dedd4bea2543`
