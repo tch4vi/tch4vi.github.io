@@ -13,7 +13,7 @@ I've started with the meta start of the CTF challenges, which is the enumeration
 
 After the enumeration with nmap and seeing the port http 80 open, I've tried to access the web and that's what I see: A corridor. Now the name of the challenge makes sense.
 
-![[corridorshow.png]]
+![Corridor](corridorshow.png)
 
 Each door of the corridor is like a directory, you can open them and see what's inside. All the doors offer the same, an empty room with the same pattern on the URL:
 `http://10.65.150.204/8f14e45fceea167a5a36dedd4bea2543`
