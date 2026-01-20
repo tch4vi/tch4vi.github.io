@@ -107,6 +107,28 @@ section {
   margin: 1.5rem 0;
 }
 
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #7b68ee;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.contact-link .icon {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+
+
+
 /* ===============================
    Code blocks (``` fenced)
    =============================== */
