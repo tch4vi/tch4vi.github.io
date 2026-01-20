@@ -7,12 +7,12 @@ platform: Free
 
 On today's hacking, the writeup will be a bit different. I won't be using all the details of the machine i've been working on, this comes from a Job Application and I will keep the identity of the company and the details of the activity censored. But somehow, I wanted to write it so let's wrap it.
 I've completed this challenge last week, I was scrolling on Linkedin and saw a job offer that was challenging whoever wanted to take part of the application and shared a code block in hexadecimal:
-
-`6148523063484d364c79397a5a57
-`4e31636d6c306553316c59584e30`
-`5a5849745a57646e4c6e4d7a4c57`
-`...`
-
+```
+6148523063484d364c79397a5a57
+4e31636d6c306553316c59584e30
+5a5849745a57646e4c6e4d7a4c57
+...
+```
 
 As I said above, to not disrupt any selection process or anything I won't share the full details of the challenge (eventho this blog works as a hacked-machines-library for me)
 
@@ -203,6 +203,7 @@ Example:
 Wrote a Python script that extracts the numbers, stores it in a dictionary, reconstructs in the correct order and converts ASCII into text.
 
 Good challenge
+
 
 
 
