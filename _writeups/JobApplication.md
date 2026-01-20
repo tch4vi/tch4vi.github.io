@@ -1,3 +1,10 @@
+---
+layout: writeup
+title: "JobApplication"
+date: 2026-01-20
+platform: Free
+---
+
 On today's hacking, the writeup will be a bit different. I won't be using all the details of the machine i've been working on, this comes from a Job Application and I will keep the identity of the company and the details of the activity censored. But somehow, I wanted to write it so let's wrap it.
 I've completed this challenge last week, I was scrolling on Linkedin and saw a job offer that was challenging whoever wanted to take part of the application and shared a code block in hexadecimal:
 
@@ -11,49 +18,49 @@ As I said above, to not disrupt any selection process or anything I won't share 
 
 Going back to the challenge. Judging by the integrity of the code block provided, we can see that it's an hexadecimal encoding. I proceed to use CyberChef tool to see what's inside and found that this code, was a hiding a  compressed `.tar` file that had a docker web inside.
 
-![AdevintaOS](Images/cyberchef.png)
+![AdevintaOS](assets/AdevintaOS/cyberchef.png)
 
 I used CyberChef tool but using `echo "61485230... | xxd -r -p | base64 -d` would work too:
 
-![AdevintaOS](Images/cyberchef2.png)
+![AdevintaOS](assets/AdevintaOS/cyberchef2.png)
 
 After downloading the `.tar` file from the url that was provided we got the following files:
 
-![AdevintaOS](Images/lsladocker.png)
+![AdevintaOS](assets/AdevintaOS/lsladocker.png)
 
 
-![AdevintaOS](Images/catnginx.png)
+![AdevintaOS](assets/AdevintaOS/catnginx.png)
 
 
 
-![AdevintaOS](Images/catdockerfile2.png)
+![AdevintaOS](assets/AdevintaOS/catdockerfile2.png)
 
 After checking some of the files and I decided that it was a good moment to run docker, start the services and see what was offering to me. In the config file I saw something related to nginx so I was expecting some sort of web vulnerabilities:
 
 `docker build -t easteregg .`
 
-![AdevintaOS](Images/dockerbuildfail.png)
+![AdevintaOS](assets/AdevintaOS/dockerbuildfail.png)
 My first try with docker failed but it was because i'm using Podman instead of docker, which seems to be more strict than Docker. I had to edit the Dockerfile with the full path of the `nginx:1.19-apline` which is `docker.io/library/nginx:1.19-alpine` 
 
-![AdevintaOS](Images/catdockefile.png)
+![AdevintaOS](assets/AdevintaOS/catdockefile.png)
 
 
 After that, running again the `docker build -t easteregg .` worked fine and could take a look arround the webpage that was hosting
 
-![AdevintaOS](Images/terminal.png)
+![AdevintaOS](assets/AdevintaOS/terminal.png)
 
 I've tried some commands here and there in the emulated terminal but nothing worked, I assumed that the first flag would be at least get a user with privileges to see file `passwords.txt`. 
-![AdevintaOS](Images/terminal2.png)
+![AdevintaOS](assets/AdevintaOS/terminal2.png)
 
 The web simulates a common terminal, but before digging deeper into the files that the challenge provided me, I tried some stuff in the devtools, from the browser, but it gave no results. Quickly I discovered that, this wasn't the way to solve it, or at least I didn't see it.
 
 The compressed file, came with 3 files that caught my eye; `validate.wasm`, `validate.js` and `terminal.js`
 
-![AdevintaOS](Images/lsladist.png)
+![AdevintaOS](assets/AdevintaOS/lsladist.png)
 
 I started working with `terminal.js`, the most important thing that I found was the string the terminal spawns once you get the flag
 
-![AdevintaOS](Images/cateterminal2.png)
+![AdevintaOS](assets/AdevintaOS/cateterminal2.png)
 
 This is very clarifying because, we get the confirmation that the terminal validate the input received by the .wasm files. After seeing this I went again to the devtools from the browser, but still gave no results (i'm very persistent, in my head I was trying to solve the riddle through the devtools).
 The best way to solve this was by completing a reversing with WASM, which, i'm not very experienced on that. But, we have plenty of information at our disposal so I started working on that.
@@ -63,16 +70,16 @@ Worked on the tool `wasm2wat`, can be useful, but the best result came from the 
 `wasm-objdump -d validate.wasm > disasm.txt`
 
 
-![AdevintaOS](Images/wasmobjdump.png)
+![AdevintaOS](assets/AdevintaOS/wasmobjdump.png)
 
-![AdevintaOS](Images/catdisasm.png)
+![AdevintaOS](assets/AdevintaOS/catdisasm.png)
 
-![AdevintaOS](Images/wasmobjdump2.png)
+![AdevintaOS](assets/AdevintaOS/wasmobjdump2.png)
 
 
 `wasm-objdump -x validate.wasm`
 
-![AdevintaOS](Images/wasmobjdump3.png)
+![AdevintaOS](assets/AdevintaOS/wasmobjdump3.png)
 
 From this command `wasm-objdump -x` this is the part that I think is the most important.
 
@@ -92,16 +99,16 @@ After using `wasm-objdump`, I then proceed to run the command `wasm-decompile` t
 
 `wasm-decompile validate.wasm > decompiled.txt`
 
-![AdevintaOS](Images/wasmdecompile.png)
+![AdevintaOS](assets/AdevintaOS/wasmdecompile.png)
 
 The file contains +1000 code lines:
 
-![AdevintaOS](Images/catdecompiled.png)
+![AdevintaOS](assets/AdevintaOS/catdecompiled.png)
 
 
 This section is the most important:
 
-![AdevintaOS](Images/catdecompile2.png)
+![AdevintaOS](assets/AdevintaOS/catdecompile2.png)
 
 That section over here seems to be the flag, but it's in a very obfuscated way. The comparison against 56 reveals that the password has a fixed length of 56 characters.
 
@@ -167,9 +174,9 @@ EOF
 
 And after that we found the flag:
 
-![AdevintaOS](Images/AdevintaOS/flag.png)
+![AdevintaOS](assets/AdevintaOS/AdevintaOS/flag.png)
 
-![AdevintaOS](Images/flag2.png)
+![AdevintaOS](assets/AdevintaOS/flag2.png)
 
 To summarize everything a bit the steps we followed:
 Stage 1 - The initial message (hex -> base64 -> URL)
@@ -195,3 +202,4 @@ Example:
 Wrote a Python script that extracts the numbers, stores it in a dictionary, reconstructs in the correct order and converts ASCII into text.
 
 Good challenge
+
