@@ -11,49 +11,49 @@ As I said above, to not disrupt any selection process or anything I won't share 
 
 Going back to the challenge. Judging by the integrity of the code block provided, we can see that it's an hexadecimal encoding. I proceed to use CyberChef tool to see what's inside and found that this code, was a hiding a  compressed `.tar` file that had a docker web inside.
 
-![[cyberchef.png]]
+![AdevintaOS](Images/cyberchef.png)
 
 I used CyberChef tool but using `echo "61485230... | xxd -r -p | base64 -d` would work too:
 
-![[cyberchef2.png]]
+![AdevintaOS](Images/cyberchef2.png)
 
 After downloading the `.tar` file from the url that was provided we got the following files:
 
-![[lsladocker.png]]
+![AdevintaOS](Images/lsladocker.png)
 
 
-![[catnginx.png]]
+![AdevintaOS](Images/catnginx.png)
 
 
 
-![[catdockerfile2.png]]
+![AdevintaOS](Images/catdockerfile2.png)
 
 After checking some of the files and I decided that it was a good moment to run docker, start the services and see what was offering to me. In the config file I saw something related to nginx so I was expecting some sort of web vulnerabilities:
 
 `docker build -t easteregg .`
 
-![[dockerbuildfail.png]]
+![AdevintaOS](Images/dockerbuildfail.png)
 My first try with docker failed but it was because i'm using Podman instead of docker, which seems to be more strict than Docker. I had to edit the Dockerfile with the full path of the `nginx:1.19-apline` which is `docker.io/library/nginx:1.19-alpine` 
 
-![[catdockefile.png]]
+![AdevintaOS](Images/catdockefile.png)
 
 
 After that, running again the `docker build -t easteregg .` worked fine and could take a look arround the webpage that was hosting
 
-![[terminal.png]]
+![AdevintaOS](Images/terminal.png)
 
 I've tried some commands here and there in the emulated terminal but nothing worked, I assumed that the first flag would be at least get a user with privileges to see file `passwords.txt`. 
-![[terminal2.png]]
+![AdevintaOS](Images/terminal2.png)
 
 The web simulates a common terminal, but before digging deeper into the files that the challenge provided me, I tried some stuff in the devtools, from the browser, but it gave no results. Quickly I discovered that, this wasn't the way to solve it, or at least I didn't see it.
 
 The compressed file, came with 3 files that caught my eye; `validate.wasm`, `validate.js` and `terminal.js`
 
-![[lsladist.png]]
+![AdevintaOS](Images/lsladist.png)
 
 I started working with `terminal.js`, the most important thing that I found was the string the terminal spawns once you get the flag
 
-![[cateterminal2.png]]
+![AdevintaOS](Images/cateterminal2.png)
 
 This is very clarifying because, we get the confirmation that the terminal validate the input received by the .wasm files. After seeing this I went again to the devtools from the browser, but still gave no results (i'm very persistent, in my head I was trying to solve the riddle through the devtools).
 The best way to solve this was by completing a reversing with WASM, which, i'm not very experienced on that. But, we have plenty of information at our disposal so I started working on that.
@@ -63,16 +63,16 @@ Worked on the tool `wasm2wat`, can be useful, but the best result came from the 
 `wasm-objdump -d validate.wasm > disasm.txt`
 
 
-![[wasmobjdump.png]]
+![AdevintaOS](Images/wasmobjdump.png)
 
-![[catdisasm.png]]
+![AdevintaOS](Images/catdisasm.png)
 
-![[wasmobjdump2.png]]
+![AdevintaOS](Images/wasmobjdump2.png)
 
 
 `wasm-objdump -x validate.wasm`
 
-![[wasmobjdump3.png]]
+![AdevintaOS](Images/wasmobjdump3.png)
 
 From this command `wasm-objdump -x` this is the part that I think is the most important.
 
@@ -92,16 +92,16 @@ After using `wasm-objdump`, I then proceed to run the command `wasm-decompile` t
 
 `wasm-decompile validate.wasm > decompiled.txt`
 
-![[wasmdecompile.png]]
+![AdevintaOS](Images/wasmdecompile.png)
 
 The file contains +1000 code lines:
 
-![[catdecompiled.png]]
+![AdevintaOS](Images/catdecompiled.png)
 
 
 This section is the most important:
 
-![[catdecompile2.png]]
+![AdevintaOS](Images/catdecompile2.png)
 
 That section over here seems to be the flag, but it's in a very obfuscated way. The comparison against 56 reveals that the password has a fixed length of 56 characters.
 
@@ -167,9 +167,9 @@ EOF
 
 And after that we found the flag:
 
-![[AdevintaOS/flag.png]]
+![AdevintaOS](Images/AdevintaOS/flag.png)
 
-![[flag2.png]]
+![AdevintaOS](Images/flag2.png)
 
 To summarize everything a bit the steps we followed:
 Stage 1 - The initial message (hex -> base64 -> URL)
