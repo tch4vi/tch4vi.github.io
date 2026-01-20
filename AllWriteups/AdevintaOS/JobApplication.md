@@ -33,6 +33,7 @@ After checking some of the files and I decided that it was a good moment to run 
 `docker build -t easteregg .`
 
 ![AdevintaOS](Images/dockerbuildfail.png)
+
 My first try with docker failed but it was because i'm using Podman instead of docker, which seems to be more strict than Docker. I had to edit the Dockerfile with the full path of the `nginx:1.19-apline` which is `docker.io/library/nginx:1.19-alpine` 
 
 ![AdevintaOS](Images/catdockefile.png)
@@ -43,6 +44,7 @@ After that, running again the `docker build -t easteregg .` worked fine and coul
 ![AdevintaOS](Images/terminal.png)
 
 I've tried some commands here and there in the emulated terminal but nothing worked, I assumed that the first flag would be at least get a user with privileges to see file `passwords.txt`. 
+
 ![AdevintaOS](Images/terminal2.png)
 
 The web simulates a common terminal, but before digging deeper into the files that the challenge provided me, I tried some stuff in the devtools, from the browser, but it gave no results. Quickly I discovered that, this wasn't the way to solve it, or at least I didn't see it.
