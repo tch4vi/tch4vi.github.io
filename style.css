@@ -102,6 +102,40 @@ section {
   margin-left: 0.4rem;
 }
 
+/* ===============================
+   Code blocks (``` fenced)
+   =============================== */
+
+pre,
+.highlight {
+  background: #0d1117;        /* fondo más claro que el body */
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+/* El código en sí */
+pre code,
+.highlight code {
+  background: none;
+  color: #c9d1d9;
+  font-family: "JetBrains Mono", "Fira Code", monospace;
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+/* Inline code */
+p code,
+li code {
+  background: #161b22;
+  color: #e6edf3;
+  padding: 0.15em 0.35em;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+/* =============================== */
 
 .read-more {
   display: inline-block;
