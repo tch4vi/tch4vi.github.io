@@ -50,6 +50,7 @@ After that, running again the `docker build -t easteregg .` worked fine and coul
 ![AdevintaOS](/assets/AdevintaOS/terminal.png)
 
 I've tried some commands here and there in the emulated terminal but nothing worked, I assumed that the first flag would be at least get a user with privileges to see file `passwords.txt`. 
+
 ![AdevintaOS](/assets/AdevintaOS/terminal2.png)
 
 The web simulates a common terminal, but before digging deeper into the files that the challenge provided me, I tried some stuff in the devtools, from the browser, but it gave no results. Quickly I discovered that, this wasn't the way to solve it, or at least I didn't see it.
@@ -203,6 +204,7 @@ Example:
 Wrote a Python script that extracts the numbers, stores it in a dictionary, reconstructs in the correct order and converts ASCII into text.
 
 Good challenge
+
 
 
 
