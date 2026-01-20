@@ -20,6 +20,7 @@ Going back to the challenge. Judging by the integrity of the code block provided
 
 ![AdevintaOS](/assets/AdevintaOS/cyberchef.png)
 <!--more-->
+
 I used CyberChef tool but using `echo "61485230... | xxd -r -p | base64 -d` would work too:
 
 ![AdevintaOS](/assets/AdevintaOS/cyberchef2.png)
@@ -204,6 +205,7 @@ Example:
 Wrote a Python script that extracts the numbers, stores it in a dictionary, reconstructs in the correct order and converts ASCII into text.
 
 Good challenge
+
 
 
 
