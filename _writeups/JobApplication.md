@@ -146,7 +146,8 @@ I've created the following python script (with some help from ChatGPT) that decr
 4.- Converts ASCII -> text
 
 
-```python3 - << 'EOF'
+```
+python3 - << 'EOF'
 import re
 
 fields = [
@@ -202,5 +203,6 @@ Example:
 Wrote a Python script that extracts the numbers, stores it in a dictionary, reconstructs in the correct order and converts ASCII into text.
 
 Good challenge
+
 
 
