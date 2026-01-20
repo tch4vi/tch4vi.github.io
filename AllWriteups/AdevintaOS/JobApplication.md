@@ -171,11 +171,12 @@ EOF
 
 And after that we found the flag:
 
-![AdevintaOS](Images/AdevintaOS/flag.png)
+![AdevintaOS](Images/flag.png)
 
 ![AdevintaOS](Images/flag2.png)
 
 To summarize everything a bit the steps we followed:
+
 Stage 1 - The initial message (hex -> base64 -> URL)
 We recognised the encoding, used tools like CyberChef and decoders.
 
