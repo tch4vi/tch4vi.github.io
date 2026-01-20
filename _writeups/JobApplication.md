@@ -182,6 +182,7 @@ And after that we found the flag:
 ![AdevintaOS](/assets/AdevintaOS/flag2.png)
 
 To summarize everything a bit the steps we followed:
+
 Stage 1 - The initial message (hex -> base64 -> URL)
 We recognised the encoding, used tools like CyberChef and decoders.
 
@@ -205,6 +206,7 @@ Example:
 Wrote a Python script that extracts the numbers, stores it in a dictionary, reconstructs in the correct order and converts ASCII into text.
 
 Good challenge
+
 
 
 
