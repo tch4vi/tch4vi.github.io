@@ -175,7 +175,7 @@ EOF
 
 And after that we found the flag:
 
-![AdevintaOS](/assets/AdevintaOS/AdevintaOS/flag.png)
+![AdevintaOS](/assets/AdevintaOS/flag.png)
 
 ![AdevintaOS](/assets/AdevintaOS/flag2.png)
 
@@ -203,6 +203,7 @@ Example:
 Wrote a Python script that extracts the numbers, stores it in a dictionary, reconstructs in the correct order and converts ASCII into text.
 
 Good challenge
+
 
 
 
