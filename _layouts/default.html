@@ -6,26 +6,15 @@
   <link rel="stylesheet" href="/style.css">
 </head>
 <body>
-
   <div class="layout">
     <aside class="sidebar">
-      <h1>{{ site.title }}</h1>
-      <p class="subtitle">{{ site.description }}</p>
-
-      <nav>
-        <ul>
-          <li><a href="/">Home</a></li>
-          {% for w in site.writeups %}
-            <li><a href="{{ w.url }}">{{ w.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </nav>
+      {% include sidebar.html %}
     </aside>
 
     <main class="content">
       {{ content }}
     </main>
   </div>
-
 </body>
+
 </html>
