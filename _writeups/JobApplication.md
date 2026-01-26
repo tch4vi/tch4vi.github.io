@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: "Job Application"
+title: "AdevintaOS"
 date: 2026-01-20
 platform: Free
 ---
@@ -206,6 +206,7 @@ Example:
 Wrote a Python script that extracts the numbers, stores it in a dictionary, reconstructs in the correct order and converts ASCII into text.
 
 Good challenge
+
 
 
 
