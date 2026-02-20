@@ -57,7 +57,7 @@ I got no result, and it finished quite fast so I decided to run a second command
 ``whatweb http://soulmate.htb``
 
 
-<img src="/assets/Soulmate/whatweb.png" alt="whatweb" style="width:50%;">
+<img src="/assets/Soulmate/whatweb.png" alt="whatweb" style="width:90%;">
 
 The web is using PHP. To fully clarify I've used Wappalyzer extension on firefox, it's a great extension that gives information about technologies that the web page is using. It's something I wanted to do long time ago, but for some reason I didn't add wappalyzer to my browser until today:
 
@@ -131,7 +131,7 @@ I ran the following command:
 
 ``ps aux | grep erlang`` 
 
-<img src="/assets/Soulmate/stuck1.png" alt="stuck1" style="width:85%;">
+<img src="/assets/Soulmate/stuck1.png" alt="stuck1" style="width:90%;">
 
 There are some files being used by root. 
 I proceed then to start digging it a bit, and found gold on the ``start.escript`` file :]
