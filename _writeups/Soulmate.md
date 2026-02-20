@@ -14,7 +14,7 @@ I've started with the current meta for CTF's, which is, opening with nmap. I ran
 
 We got ports 22, 80 and 4369 open; web, ssh, and epmd. I've searched some information about this service because i'm not familiarized with it and it's referred to Erlang shell. We might need to dig deeper later on Erlang ssh, but for the moment let's run our second nmap command to check versions and get some more information
 
-![[Soulmate/Images/nmap2.png]]
+![[Soulmate](/assets/nmap2.png)
 
 Nothing surprising at the moment, Nginx, common.
 
