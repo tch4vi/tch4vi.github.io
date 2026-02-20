@@ -14,7 +14,9 @@ I've started with the current meta for CTF's, which is, opening with nmap. I ran
 ``nmap -p- --min-rate=5000 -Pn 10.129.1.254``
 
 ``p`` --> all ports
+
 ``min-rate=5000`` --> sending packets no slower than 5000 per second
+
 ``Pn`` --> Treat all hosts as online -- skip host discovery
 
 
