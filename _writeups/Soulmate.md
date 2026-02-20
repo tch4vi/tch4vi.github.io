@@ -62,7 +62,7 @@ I got no result, and it finished quite fast so I decided to run a second command
 The web is using PHP. To fully clarify I've used Wappalyzer extension on firefox, it's a great extension that gives information about technologies that the web page is using. It's something I wanted to do long time ago, but for some reason I didn't add wappalyzer to my browser until today:
 
 
-<img src="/assets/Soulmate/wappalyzer.png" alt="wappalyzer" style="width:60%;">
+<img src="/assets/Soulmate/wappalyzer.png" alt="wappalyzer" style="width:40%;">
 
 Confirms the usage of php. So, let's run a second feroxbuster round but specifying the php format.
 
