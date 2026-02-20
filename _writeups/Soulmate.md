@@ -3,6 +3,7 @@ On today's hacking, i've worked on a Linux machine called Soulmate, from HackThe
 ![Soulmate](/assets/Soulmate/soulmate.png)
 
 I've started with the current meta for CTF's, which is, opening with nmap. I ran the following command:
+
 ``nmap -p- --min-rate=5000 -Pn 10.129.1.254``
 
 ``p`` --> all ports
