@@ -42,7 +42,7 @@ Seems like it's a dating web page. I've tried moving arround the page but the on
 <img src="/assets/Soulmate/soulmate2.png" alt="soulmate2" style="width:40%;">
 
 
-<img src="/assets/Soulmate/soulmate3.png" alt="soulmate3" style="width:60%;">
+<img src="/assets/Soulmate/soulmate3.png" alt="soulmate3" style="width:40%;">
 
 After checking a bit the web, i've went back to the terminal, time to check if there is any hidden directory that we can spoof with feroxbuster
 I ran the following command:
@@ -62,7 +62,7 @@ I got no result, and it finished quite fast so I decided to run a second command
 The web is using PHP. To fully clarify I've used Wappalyzer extension on firefox, it's a great extension that gives information about technologies that the web page is using. It's something I wanted to do long time ago, but for some reason I didn't add wappalyzer to my browser until today:
 
 
-<img src="/assets/Soulmate/wappalyzer.png" alt="wappalyzer" style="width:40%;">
+<img src="/assets/Soulmate/wappalyzer.png" alt="wappalyzer" style="width:30%;">
 
 Confirms the usage of php. So, let's run a second feroxbuster round but specifying the php format.
 
@@ -87,7 +87,7 @@ But we are not done yet with the directory fuzzing thingy. There is another tool
 
 Seems like there is a ftp.soulmate.htb here. After adding it to our ``/etc/hosts`` file and try to access we see this:
 
-![Soulmate](/assets/Soulmate/ftpsoulmate.png)
+<img src="/assets/Soulmate/ftpsoulmate.png" alt="ftpsoulmate" style="width:60%;">
 
 CrushFTP, after reading a bit about this I found that there is a vulnerability that allows you to log in with Admin privileges, the CVE-2025-31161. This authbypass vulnerability requires the username of an existing user on the CrushFTP server, by default there is an user crushadmin, that's the one we will use.
 
@@ -131,7 +131,7 @@ I ran the following command:
 
 ``ps aux | grep erlang`` 
 
-<img src="/assets/Soulmate/stuck1.png" alt="stuck1" style="width:70%;">
+<img src="/assets/Soulmate/stuck1.png" alt="stuck1" style="width:85%;">
 
 There are some files being used by root. 
 I proceed then to start digging it a bit, and found gold on the ``start.escript`` file :]
