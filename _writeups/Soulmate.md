@@ -148,7 +148,9 @@ In this machine, the Erlang shell accessible via SSH on port 2222 gave us a non-
 Seems like the service starts whenever someone uses ssh via port 2222, so that's what I did, in order to see what Erlang can offer me:
 
 ``ssh -p 2222 ben@localhost``
+
 ``-p`` --> to specify the port
+
 ``localhost`` --> it's a local service so localhost or 127.0.0.1 would work
 
 Judging by the aspect seems like a different ssh shell with different commands, but it can give us what we want, which is the root flag.
