@@ -34,7 +34,7 @@ Let's see what has the web to offer us, we modify our file ``/etc/hosts`` to add
 ``soulmate.htb``
 <!--more-->
 
-![Soulmate](/assets/Soulmate/soulmate1.png)
+<img src="/assets/Soulmate/soulmate1.png" alt="soulmate1" style="width:60%;">
 
 Seems like it's a dating web page. I've tried moving arround the page but the only thing i'm able to do is creating a profile and nothing much:
 
