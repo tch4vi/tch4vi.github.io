@@ -39,7 +39,7 @@ Let's see what has the web to offer us, we modify our file ``/etc/hosts`` to add
 Seems like it's a dating web page. I've tried moving arround the page but the only thing i'm able to do is creating a profile and nothing much:
 
 
-<img src="/assets/Soulmate/soulmate2.png" alt="soulmate2" style="width:40%;">
+<img src="/assets/Soulmate/soulmate2.png" alt="soulmate2" style="width:80%;">
 
 
 <img src="/assets/Soulmate/soulmate3.png" alt="soulmate3" style="width:60%;">
@@ -57,7 +57,7 @@ I got no result, and it finished quite fast so I decided to run a second command
 ``whatweb http://soulmate.htb``
 
 
-<img src="/assets/Soulmate/whatweb.png" alt="whatweb" style="width:60%;">
+<img src="/assets/Soulmate/whatweb.png" alt="whatweb" style="width:50%;">
 
 The web is using PHP. To fully clarify I've used Wappalyzer extension on firefox, it's a great extension that gives information about technologies that the web page is using. It's something I wanted to do long time ago, but for some reason I didn't add wappalyzer to my browser until today:
 
@@ -131,7 +131,7 @@ I ran the following command:
 
 ``ps aux | grep erlang`` 
 
-![Soulmate](/assets/Soulmate/stuck1.png)
+<img src="/assets/Soulmate/stuck1.png" alt="stuck1" style="width:50%;">
 
 There are some files being used by root. 
 I proceed then to start digging it a bit, and found gold on the ``start.escript`` file :]
