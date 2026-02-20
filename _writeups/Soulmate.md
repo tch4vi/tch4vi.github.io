@@ -31,7 +31,7 @@ We got ports 22, 80 and 4369 open; web, ssh, and epmd. I've searched some inform
 Nothing surprising at the moment, Nginx, common.
 
 Let's see what has the web to offer us, we modify our file ``/etc/hosts`` to add the IP ``10.129.1.254`` and the domain name 
-``10.129.1.254  soulmate.htb``
+``soulmate.htb``
 <!--more-->
 
 ![Soulmate](/assets/Soulmate/soulmate1.png)
