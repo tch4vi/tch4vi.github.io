@@ -41,20 +41,24 @@ Seems like it's a dating web page. I've tried moving arround the page but the on
 
 <img src="/assets/Soulmate/soulmate2.png" alt="soulmate2" style="width:60%;">
 
-![Soulmate](/assets/Soulmate/soulmate3.png)
+
+
+<img src="/assets/Soulmate/soulmate3.png" alt="soulmate3" style="width:60%;">
 
 After checking a bit the web, i've went back to the terminal, time to check if there is any hidden directory that we can spoof with feroxbuster
 I ran the following command:
 
 ``feroxbuster -u http://soulmate.htb``
 
-![Soulmate](/assets/Soulmate/feroxbuster.png)
+
+<img src="/assets/Soulmate/feroxbuster.png" alt="feroxbuster" style="width:60%;">
 
 I got no result, and it finished quite fast so I decided to run a second command that might give me more information about the web page:
 
 ``whatweb http://soulmate.htb``
 
-![Soulmate](/assets/Soulmate/whatweb.png)
+
+<img src="/assets/Soulmate/whatweb.png" alt="whatweb" style="width:60%;">
 
 The web is using PHP. To fully clarify I've used Wappalyzer extension on firefox, it's a great extension that gives information about technologies that the web page is using. It's something I wanted to do long time ago, but for some reason I didn't add wappalyzer to my browser until today:
 
