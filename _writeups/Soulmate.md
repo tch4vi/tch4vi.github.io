@@ -39,7 +39,7 @@ Let's see what has the web to offer us, we modify our file ``/etc/hosts`` to add
 Seems like it's a dating web page. I've tried moving arround the page but the only thing i'm able to do is creating a profile and nothing much:
 
 
-<img src="/assets/Soulmate/soulmate2.png" alt="soulmate2" style="width:80%;">
+<img src="/assets/Soulmate/soulmate2.png" alt="soulmate2" style="width:10%;">
 
 
 <img src="/assets/Soulmate/soulmate3.png" alt="soulmate3" style="width:60%;">
