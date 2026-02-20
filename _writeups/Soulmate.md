@@ -131,7 +131,7 @@ I ran the following command:
 
 ``ps aux | grep erlang`` 
 
-<img src="/assets/Soulmate/stuck1.png" alt="stuck1" style="width:50%;">
+<img src="/assets/Soulmate/stuck1.png" alt="stuck1" style="width:70%;">
 
 There are some files being used by root. 
 I proceed then to start digging it a bit, and found gold on the ``start.escript`` file :]
