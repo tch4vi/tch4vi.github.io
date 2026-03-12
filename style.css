@@ -50,6 +50,10 @@ body {
 /* Main content */
 .content {
   padding: 40px;
+  max-width: 860px;        /* ancho máximo del contenido */
+  margin: 0 auto;          /* centra horizontalmente */
+  width: 100%;
+  box-sizing: border-box;
 }
 
 section {
