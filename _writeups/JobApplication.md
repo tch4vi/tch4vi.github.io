@@ -1,10 +1,11 @@
+```
 ---
 layout: writeup
 title: "AdevintaOS"
 date: 2026-01-20
 platform: Free
 ---
-
+```
 On today's hacking, the writeup will be a bit different. I won't be using all the details of the machine i've been working on, this comes from a Job Application and I will keep the identity of the company and the details of the activity censored. But somehow, I wanted to write it so let's wrap it.
 I've completed this challenge last week, I was scrolling on Linkedin and saw a job offer that was challenging whoever wanted to take part of the application and shared a code block in hexadecimal:
 ```
@@ -206,6 +207,7 @@ Example:
 Wrote a Python script that extracts the numbers, stores it in a dictionary, reconstructs in the correct order and converts ASCII into text.
 
 Good challenge
+
 
 
 
