@@ -51,7 +51,7 @@ body {
 .content {
   /*padding: 40px;*/
   max-width: 860px;        /* ancho máximo del contenido */
-  margin: 0;          /* centra horizontalmente */
+  margin: 5;          /* centra horizontalmente */
   width: 100%;
   box-sizing: border-box;
 }
