@@ -179,6 +179,61 @@ li code {
   border-radius: 4px;
   font-size: 0.9em;
 }
+/* CSS code for main page, show small description and image from writeups -->/*
+/* Writeup Cards */
+.writeup-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #161b22;
+  border: 1px solid #21262d;
+  border-radius: 8px;
+  padding: 20px;
+  margin-bottom: 16px;
+  transition: border-color 0.2s;
+}
+
+.writeup-card:hover {
+  border-color: #7b68ee;
+}
+
+.writeup-card-text {
+  flex: 1;
+  padding-right: 20px;
+}
+
+.writeup-card-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #7b68ee;
+  text-decoration: none;
+}
+
+.writeup-card-title:hover {
+  text-decoration: underline;
+}
+
+.writeup-card-desc {
+  color: #8b949e;
+  font-size: 0.9rem;
+  margin: 8px 0;
+}
+
+.writeup-card-img {
+  width: 160px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.writeup-card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
 /* =============================== */
 
 .read-more {
