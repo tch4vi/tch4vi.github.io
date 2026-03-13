@@ -3,6 +3,8 @@ layout: writeup
 title: "Soulmate – HackTheBox"
 date: 2026-02-19
 platform: HackTheBox
+description: "Linux easy machine involving enumeration and privilege escalation."
+image: /assets/Soulmate/soulmate.png
 ---
 
 On today's hacking, i've worked on a Linux machine called Soulmate, from HackTheBox. It's defined as easy but it took me a bit to get all the flags so, let's see what it has.
