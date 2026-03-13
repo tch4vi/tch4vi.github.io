@@ -3,14 +3,19 @@ layout: default
 title: Home
 ---
 <section>
-  <h2>Writeups</h2>
-  <ul class="writeup-list">
-    {% assign sorted = site.writeups | sort: "date" | reverse %}
-    {% for w in sorted %}
-    <li>
-      <a href="{{ w.url }}" class="writeup-link">{{ w.title }}</a>
+  {% assign sorted = site.writeups | sort: "date" | reverse %}
+  {% for w in sorted %}
+  <article class="writeup-card">
+    <div class="writeup-card-text">
+      <a href="{{ w.url }}" class="writeup-card-title">{{ w.title }}</a>
+      <p class="writeup-card-desc">{{ w.description }}</p>
       <span class="platform">{{ w.platform }} · {{ w.date | date: "%B %d, %Y" }}</span>
-    </li>
-    {% endfor %}
-  </ul>
+    </div>
+    {% if w.image %}
+    <div class="writeup-card-img">
+      <img src="{{ w.image }}" alt="{{ w.title }}">
+    </div>
+    {% endif %}
+  </article>
+  {% endfor %}
 </section>
