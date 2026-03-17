@@ -11,9 +11,9 @@
         {% assign sorted = site.writeups | sort: "date" | reverse %}
         {% for w in sorted %}
           {% if forloop.last %}
-        <li><a href="{{ w.url }}">│   └── {{ w.title }}</a></li>
+        <li><a href="{{ w.url }}">│├── {{ w.title }}</a></li>
           {% else %}
-        <li><a href="{{ w.url }}">│   ├── {{ w.title }}</a></li>
+        <li><a href="{{ w.url }}">│└── {{ w.title }}</a></li>
           {% endif %}
         {% endfor %}
       </ul>
