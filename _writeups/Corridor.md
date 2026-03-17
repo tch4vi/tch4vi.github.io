@@ -3,6 +3,9 @@ layout: writeup
 title: "Corridor – TryHackMe"
 date: 2026-01-17
 platform: TryHackMe
+description: "You have found yourself in a strange corridor. Can you find your way back to where you came?
+In this challenge, you will explore potential IDOR vulnerabilities. Examine the URL endpoints you access as you navigate the website and note the hexadecimal values you find (they look an awful lot like a hash, don't they?). This could help you uncover website locations you were not expected to access."
+image: /assets/Corridor/corridorlogo.png
 ---
 On today's hacking, I've been working in one small hacking challenge that TryHackMe has. They have some small hacking rooms that offer good concepts to learn in an entertaining way. Today, the room is called "Corridor", working on that room will teach us some learnings on IDOR's, hashing and more. Let's see:
 
