@@ -236,8 +236,8 @@ li code {
 }
 
 .sidebar-avatar {
-  width: 80px;
-  height: 80px;
+  width: 110px;
+  height: 110px;
   border-radius: 50%;
   overflow: hidden;
   margin-bottom: 16px;
@@ -245,8 +245,8 @@ li code {
 }
 
 .sidebar-avatar img {
-  width: 80px !important;
-  height: 80px !important;
+  width: 110px !important;
+  height: 110px !important;
   object-fit: cover !important;
   margin: 0 !important;
   border-radius: 50% !important;
