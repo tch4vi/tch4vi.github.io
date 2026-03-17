@@ -3,6 +3,9 @@ layout: writeup
 title: "Pickle Rick – TryHackMe"
 date: 2026-01-09
 platform: TryHackMe
+description: This Rick and Morty-themed challenge requires you to exploit a web server and find three ingredients to help Rick make his potion and transform himself back into a human from a pickle.
+Deploy the virtual machine on this task and explore the web application
+image:
 ---
 On today's hacking, i've worked on Pickle Rick, a machine located in TryHackMe platform that shows some clear web vulnerabilities. It's very easy to digest, entertaining and it's themed as Rick & Morty which I love.
 To start working on the machine, I did the standard enumeration process with nmap:
