@@ -6,13 +6,19 @@
 <nav>
   <ul>
     <li><a href="/">~ Home</a></li>
-    <li><a href="/writeups">├── Writeups</a></li>
-      {% for w in site.writeups %}
-      <li><a href="{{ w.url }}">├──{{ w.title }}</a></li>
-      {% endfor %}
+    <li><a href="/writeups">├── Writeups</a>
+      <ul>
+        {% assign sorted = site.writeups | sort: "date" | reverse %}
+        {% for w in sorted %}
+          {% if forloop.last %}
+        <li><a href="{{ w.url }}">│   └── {{ w.title }}</a></li>
+          {% else %}
+        <li><a href="{{ w.url }}">│   ├── {{ w.title }}</a></li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </li>
     <li><a href="/articles">├── Articles</a></li>
     <li><a href="/about">└── About Me</a></li>
   </ul>
 </nav>
-
-
