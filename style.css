@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: system-ui, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   background: #0d1117;
   color: #e6edf3;
 }
@@ -16,6 +16,9 @@ body {
   background: #010409;
   padding: 30px 20px;
   border-right: 1px solid #21262d;
+}
+.sidebar h1, h2, h3 {
+  font-family: 'Space Grotesk', sans-serif;
 }
 
 .sidebar-right {
