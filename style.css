@@ -270,6 +270,38 @@ li code {
   border-radius: 50% !important;
   display: block !important;
 }
+/*Responsive*/
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;  /* una sola columna */
+  }
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid #21262d;
+    padding: 20px;
+  }
+
+  .sidebar-right {
+    display: none;  /* oculta el sidebar derecho en móvil */
+  }
+
+  .content {
+    padding: 20px;
+  }
+
+  .writeup-card {
+    flex-direction: column;  /* imagen arriba, texto abajo */
+  }
+
+  .writeup-card-img {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
 
 /* =============================== */
 
