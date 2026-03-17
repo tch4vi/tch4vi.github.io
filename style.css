@@ -57,6 +57,20 @@ body {
   text-decoration: underline;
 }
 
+.sidebar details summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+.sidebar details summary::-webkit-details-marker {
+  display: none;
+}
+
+.sidebar details ul {
+  margin-top: 8px;
+  padding-left: 16px;
+}
+
 /* Main content */
 .content {
   padding: 40px;
