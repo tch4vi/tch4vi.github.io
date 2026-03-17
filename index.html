@@ -6,16 +6,16 @@ title: Home
   {% assign sorted = site.writeups | sort: "date" | reverse %}
   {% for w in sorted %}
   <article class="writeup-card">
-    <div class="writeup-card-text">
-      <a href="{{ w.url }}" class="writeup-card-title">{{ w.title }}</a>
-      <p class="writeup-card-desc">{{ w.description }}</p>
-      <span class="platform">{{ w.platform }} · {{ w.date | date: "%B %d, %Y" }}</span>
-    </div>
     {% if w.image %}
     <div class="writeup-card-img">
       <img src="{{ w.image }}" alt="{{ w.title }}">
     </div>
     {% endif %}
+    <div class="writeup-card-text">
+      <span class="writeup-date">{{ w.date | date: "%b %d, %Y" }}</span>
+      <a href="{{ w.url }}" class="writeup-card-title">{{ w.title }}</a>
+      <p class="writeup-card-desc">{{ w.description }}</p>
+    </div>
   </article>
   {% endfor %}
 </section>
