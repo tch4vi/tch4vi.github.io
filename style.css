@@ -71,6 +71,23 @@ body {
   padding-left: 16px;
 }
 
+.sidebar details summary {
+  cursor: pointer;
+  list-style: none;
+  color: #7b68ee;
+  font-weight: 500;
+}
+
+.sidebar details summary::marker,
+.sidebar details summary::-webkit-details-marker {
+  display: none;
+}
+
+.sidebar details ul {
+  padding-left: 16px;
+  margin-top: 4px;
+}
+
 /* Main content */
 .content {
   padding: 40px;
