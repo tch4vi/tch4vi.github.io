@@ -15,4 +15,8 @@ This blog is my learning notebook where I document CTFs, challenges and experime
       </svg>
       Discord
     </a>
+Certifications:
+Nozomi Networks Certified Engineer - NNCE
+Comptia Security - In progress
+CCNA - In progress
 
