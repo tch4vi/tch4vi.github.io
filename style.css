@@ -318,7 +318,11 @@ li code {
   }
 }
 
-
+/*Para los pantallazos de bloques de codigo*/
+pre {
+  max-height: 400px;
+  overflow-y: auto;
+}
 
 /* =============================== */
 
