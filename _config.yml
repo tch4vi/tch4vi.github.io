@@ -1,9 +1,26 @@
 title: tch4vi
 description: Pentesting writeups & learning notes
 theme: null
-excerpt_separator: "<!--more-->"
+
+markdown: kramdown
+highlighter: rouge
+
+kramdown:
+  syntax_highlighter: rouge          # enlaza kramdown con rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false            # ponlo en true si quieres números de línea
 
 collections:
   writeups:
     output: true
     permalink: /writeups/:name/
+
+timezone: Europe/Madrid              # fechas correctas en tus posts
+
+defaults:
+  - scope:
+      path: ""
+      type: writeups
+    values:
+      layout: writeup                # aplica el layout writeup a todos automáticamente
