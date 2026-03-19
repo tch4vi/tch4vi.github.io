@@ -13,11 +13,11 @@ On today's hacking, i'm not hacking anything but I will talk about some topics t
 Back in 2007, almost 20 years ago, Steve Jobs shocked the world with the presentation of the first iPhone. Tecnically speaking, wasn't the first smartphone, IBM holds the position on that with their SPC, Simon Personal Communicator, that's what is considered the first smarthpone. 
 The most surprising thing about the presentation that Steve Jobs did was the idea of merging 3 products in a single device that is handheld:
 
-1.- A widescreen iPod with touch controls.
+1. A widescreen iPod with touch controls.
 
-2.- A revolutionary mobile phone.
+2. A revolutionary mobile phone.
 
-3.- A breakthrough internet comunications device.
+3. A breakthrough internet comunications device.
 
 ![GoldenPath](/assets/GoldenPath/stevejobs.png)
 
