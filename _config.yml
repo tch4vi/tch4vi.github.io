@@ -16,6 +16,9 @@ collections:
   writeups:
     output: true
     permalink: /writeups/:name/
+  articles:
+    output: true
+    permalink: /articles/:name/
 
 timezone: Europe/Madrid              # fechas correctas en tus posts
 
