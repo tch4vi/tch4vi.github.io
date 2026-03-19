@@ -16,6 +16,7 @@ This blog is my learning notebook where I document CTFs, challenges and experime
     </a>
 <p>Certifications:</p>
 <p>Nozomi Networks Certified Engineer - NNCE (2025 - 2027)</p>
-<p>Comptia Security - In progress</p>
-<p>CCNA - In progress</p>
+<p>Comptia Security+ - In progress</p>
+<p>Cisco Certified Network Associate - CCNA - In progress</p>
+<p>HTB Certified Penetration Testing Specialist - CPTS - In progress</p>
 
