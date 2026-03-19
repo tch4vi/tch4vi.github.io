@@ -15,7 +15,7 @@ If you somehow ended up here and want to chat or share ideas, feel free to reach
     Discord
     </a>
 
-<p></p>
+<p>              </p>
 
     
 <p>Certifications:</p>
