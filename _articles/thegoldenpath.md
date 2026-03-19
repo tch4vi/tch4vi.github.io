@@ -21,7 +21,7 @@ The most surprising thing about the presentation that Steve Jobs did was the ide
 
 ![GoldenPath](/assets/GoldenPath/stevejobs.png)
 
-What if I told you that the whole presentation was faked? The idea of the iPhone was there, and Apple, was convinced that they could create such product but it wasn't ready for the presentation day. At that moment, the iPhone was in a unstable state, it could crash after playing 2 songs, or reproducing a video, you could send an e-mail and then surfed the web, but if you did those things in reverse, it would crash. But the presentation day was arround the corner.. So what was the plan? Apple engineers developed what was called "the golden path", a specific set of tasks, performed in a specific way and order that made the phone look as if it worked.
+What if I told you that the whole presentation was faked? The idea of the iPhone was there, and Apple, was convinced that they could create such product but it wasn't ready for the presentation day. At that moment, the iPhone was in an unstable state, it could crash after playing 2 songs, or reproducing a video, you could send an e-mail and then surfed the web, but if you did those things in reverse, it would crash. But the presentation day was arround the corner.. So what was the plan? Apple engineers developed what was called "the golden path", a specific set of tasks, performed in a specific way and order that made the phone look as if it worked.
 
 The device still had some issues with the terminal and the memory management, after x time the iphone starts thrashing, so the team prepared a few iphones that Steve Jobs, let's say, with elegancy, was switching during the presentation.
 
