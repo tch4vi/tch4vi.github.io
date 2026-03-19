@@ -5,8 +5,7 @@ title: About Me
 
 <p>Hi,<br>
 I’m Xavi, I’m a cybersecurity enthusiast who enjoys solving puzzles and understanding how systems fail, and how they can be designed and defended better.
-This blog is my learning notebook where I document CTFs, challenges and experiments as part of my learning process.</p>
-
+This blog is my learning notebook where I document CTFs, challenges and experiments as part of my learning process. Occasionally, on the Articles section I also write about concepts, ideas, or things I find interesting from security topics to whatever catches my attention</p>
 
 <p>If you somehow ended up here and want to chat or share ideas, feel free to reach out. :]</p>
     <a href="https://discord.com/users/tchavi" class="contact-link">
