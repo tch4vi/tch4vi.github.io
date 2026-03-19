@@ -25,7 +25,7 @@ What if I told you that the whole presentation was faked? The idea of the iPhone
 
 The device still had some issues with the terminal and the memory management, after x time the iphone starts thrashing, so the team prepared a few iphones that Steve Jobs, let's say, with elegancy, was switching during the presentation
 
-``thrashing --> Thrashing on an iPhone occurs when the operating system spends more time managing memory specifically moving data between RAM and the storage drive than actually running applications.``
+``thrashing --> Thrashing on an iPhone occurs when the operating system spends more time managing memory, specifically moving data between RAM and the storage drive than actually running applications.``
 
 So that's how Steve Jobs performed the presentation, he was speaking, showing the iPhone and following the golden path, doing the exact clicks that the engineers told him to do in order to not crash the iPhone, and while doing the presentation, casually setting the iPhone down on the table, grabs a new one and performs another series of clicks to keep the presentation flow
 
