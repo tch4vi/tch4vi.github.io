@@ -1,3 +1,13 @@
+---
+layout: article
+title: "The Golden Path and Self-Confidence"
+date: 2026-03-19
+platform: My head
+description: "The hidden story behing the presentation of the iphone back in 2007. Have a clear picture about what you want to accomplish"
+image: /assets/GoldenPath/stevejobs.png
+---
+
+
 On today's hacking, i'm not hacking anything but I will talk about some topics that are curious.
 
 Back in 2007, almost 20 years ago, Steve Jobs shocked the world with the presentation of the first iPhone. Tecnically speaking, wasn't the first smartphone, IBM holds the position on that with their SPC, Simon Personal Communicator, that's what is considered the first smarthpone. 
