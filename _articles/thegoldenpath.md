@@ -31,7 +31,7 @@ So that's how Steve Jobs performed the presentation, he was speaking, showing th
 
 The reason behind about why i'm telling you this is because I think there's something deeply human in that story. Apple didn't have a finished product, but they had a clear picture of what they wanted to achieve and the conviction to push forward. They didn't wait until everything was perfect. They built a path with what they had.
 I think about that a lot when it comes to personal goals, studies, day to day tasks or whatever. Most of the time we don't move forward because we are waiting to feel ready, waiting for the perfect moment, or too afraid to fail. But Apple, wasn't ready either. They just knew where they wanted to go.
-If you have a clear picture in your head of what you want to accomplish, you will develop your own golden path to get there. And if something doesn't work as you expected along the way, that's not wailing, it's just the process. It's either winning or learning, and both outcomes are the same for me.
+If you have a clear picture in your head of what you want to accomplish, you will develop your own golden path to get there. And if something doesn't work as you expected along the way, that's not failing, it's just the process. It's either winning or learning, and both outcomes are the same for me.
 
 ![GoldenPath](/assets/GoldenPath/pma.png)
 
