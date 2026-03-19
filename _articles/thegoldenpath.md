@@ -1,5 +1,5 @@
 ---
-layout: article
+layout: default
 title: "The Golden Path and Self-Confidence"
 date: 2026-03-19
 platform: My head
