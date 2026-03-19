@@ -15,7 +15,7 @@ This blog is my learning notebook where I document CTFs, challenges and experime
     Discord
     </a>
 <p>Certifications:</p>
-<p>Nozomi Networks Certified Engineer - NNCE</p>
+<p>Nozomi Networks Certified Engineer - NNCE (2025 - 2027)</p>
 <p>Comptia Security - In progress</p>
 <p>CCNA - In progress</p>
 
