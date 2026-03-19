@@ -1,6 +1,6 @@
 ---
 layout: writeup
-title: "Corridor – TryHackMe"
+title: "Corridor"
 date: 2026-01-17
 platform: TryHackMe
 description: "You have found yourself in a strange corridor. Can you find your way back to where you came?
