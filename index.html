@@ -3,18 +3,18 @@ layout: default
 title: Home
 ---
 <section>
-  {% assign sorted = site.writeups | sort: "date" | reverse %}
-  {% for w in sorted %}
+  {% assign all = site.writeups | concat: site.articles | sort: "date" | reverse %}
+  {% for post in all %}
   <article class="writeup-card">
-    {% if w.image %}
+    {% if post.image %}
     <div class="writeup-card-img">
-      <img src="{{ w.image }}" alt="{{ w.title }}">
+      <img src="{{ post.image }}" alt="{{ post.title }}">
     </div>
     {% endif %}
     <div class="writeup-card-text">
-      <span class="writeup-date">{{ w.date | date: "%b %d, %Y" }}</span>
-      <a href="{{ w.url }}" class="writeup-card-title">{{ w.title }}</a>
-      <p class="writeup-card-desc">{{ w.description }}</p>
+      <span class="writeup-date">{{ post.date | date: "%b %d, %Y" }}</span>
+      <a href="{{ post.url }}" class="writeup-card-title">{{ post.title }}</a>
+      <p class="writeup-card-desc">{{ post.description }}</p>
     </div>
   </article>
   {% endfor %}
