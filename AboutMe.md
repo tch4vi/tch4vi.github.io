@@ -14,6 +14,10 @@ If you somehow ended up here and want to chat or share ideas, feel free to reach
       </svg>
     Discord
     </a>
+
+
+
+    
 <p>Certifications:</p>
 <p>Nozomi Networks Certified Engineer - NNCE (2025 - 2027)</p>
 <p>Comptia Security+ - In progress</p>
