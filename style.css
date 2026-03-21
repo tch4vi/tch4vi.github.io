@@ -318,11 +318,8 @@ pre {
 }
 
 .htb-badge img {
-  width: 100% !important;
-  max-width: 350px !important;
+  width: 220px !important;
   height: auto !important;
   border-radius: 8px;
-  transform: scale(1.5);
-  transform-origin: top center;
 }
 
