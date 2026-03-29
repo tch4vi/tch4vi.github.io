@@ -338,6 +338,25 @@ li code {
   color: #8b949e;
   font-family: 'JetBrains Mono', monospace;
 }
+.highlight pre::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.highlight pre::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.highlight pre::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 3px;
+}
+
+.highlight pre::-webkit-scrollbar-thumb:hover {
+  background: #7b68ee;
+}
+
+
 /*Para los pantallazos de bloques de codigo*/
 /*Para el badge de HTB*/
 .htb-badge {
