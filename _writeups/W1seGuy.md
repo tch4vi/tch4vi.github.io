@@ -11,7 +11,7 @@ On today's hacking i've been working on a "5 minute hack" from TryHackMe that it
 
 There are 2 tasks in this challenge, the first is an introductory one that allows us to download the script that the server is running
 
-![[task1.png]]
+![W1seGuy](/assets/W1seGuy/task1.png)
 
 ```python
 import random
@@ -67,7 +67,7 @@ if __name__ == '__main__':
 
 This is the script the server is running, so, having that said, whenever I start a connection to the server with ``nc`` command it generates a encrypted flag, the flag in question is encrypted with XOR and then Hex. The most important part from this code is that we get a sample of the flag: ``flag = 'THM{thisisafakeflag}'``, this tells a lot, for example that the flag starts with ``THM{`` and ends with the ``}``, Or at least this is my assumption.
 
-![[task2.png]]
+![W1seGuy](/assets/W1seGuy/task2.png)
 
 Moving on, this is what I get when I try to connect to the server through port 1337:
 
