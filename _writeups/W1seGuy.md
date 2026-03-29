@@ -4,7 +4,7 @@ title: "W1seGuy"
 date: 2026-03-29
 platform: TryHackMe
 description: "A w1se guy 0nce said, the answer is usually as plain as day."
-image: /assets/W1seguy/w1se.png
+image: /assets/W1seGuy/w1se.png
 ---
 
 On today's hacking i've been working on a "5 minute hack" from TryHackMe that it looked easy at first, but it took me a bit to complete it.
