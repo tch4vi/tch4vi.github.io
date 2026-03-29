@@ -1,7 +1,7 @@
 ---
 layout: writeup
 title: "W1seGuy"
-date: 2026-01-17
+date: 2026-03-29
 platform: TryHackMe
 description: "A w1se guy 0nce said, the answer is usually as plain as day."
 image: /assets/W1seguy/w1se.png
