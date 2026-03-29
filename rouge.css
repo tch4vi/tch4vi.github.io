@@ -1,0 +1,35 @@
+.highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w { color: #c9d1d9; background-color: #0d1117; }
+.highlight .k, .highlight .kd, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kt, .highlight .kv { color: #ff7b72; }
+.highlight .gr { color: #f85149; }
+.highlight .gd { color: #f85149; background-color: #490202; }
+.highlight .nb { color: #79c0ff; }
+.highlight .nc { color: #f0883e; }
+.highlight .no { color: #79c0ff; }
+.highlight .nn { color: #f0883e; }
+.highlight .na { color: #79c0ff; }
+.highlight .nt { color: #7ee787; }
+.highlight .s, .highlight .sa, .highlight .sb, .highlight .sc, .highlight .dl, .highlight .sd, .highlight .s2, .highlight .se, .highlight .sh, .highlight .si, .highlight .sx, .highlight .sr, .highlight .s1, .highlight .ss { color: #a5d6ff; }
+.highlight .nd { color: #d2a8ff; }
+.highlight .nf, .highlight .fm { color: #d2a8ff; }
+.highlight .c, .highlight .ch, .highlight .cd, .highlight .cm, .highlight .cp, .highlight .cpf, .highlight .c1, .highlight .cs { color: #8b949e; font-style: italic; }
+.highlight .o, .highlight .ow { color: #ff7b72; }
+.highlight .m, .highlight .mb, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mx { color: #79c0ff; }
+.highlight .ge { font-style: italic; }
+.highlight .gs { font-weight: bold; }
+.highlight .gt { color: #f85149; }
+.highlight .gi { color: #7ee787; background-color: #0f5323; }
+.highlight .gh { color: #79c0ff; font-weight: bold; }
+.highlight .gu { color: #79c0ff; }
+.highlight .gl { text-decoration: underline; }
+.highlight .ni { color: #c9d1d9; }
+.highlight .bp { color: #79c0ff; }
+.highlight .ne { color: #f0883e; font-weight: bold; }
+.highlight .nl { color: #79c0ff; }
+.highlight .nv, .highlight .vc, .highlight .vg, .highlight .vi, .highlight .vm { color: #79c0ff; }
+.highlight .il { color: #79c0ff; }
+.highlight .py { color: #79c0ff; }
+.highlight .err { color: #f85149; }
+.highlight .p { color: #c9d1d9; }
+.highlight .gp { color: #8b949e; }
