@@ -305,12 +305,31 @@ li code {
 }
 
 /*Para los pantallazos de bloques de codigo*/
-pre {
-  max-height: 400px;
-  overflow-y: auto;
+pre, .highlight {
+  background: #161b22 !important;  /* un poco más claro que el body */
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 1rem 1.2rem;
 }
 
+.highlight {
+  position: relative;
+}
 
+.language-python::before { content: "Python"; }
+.language-bash::before { content: "Bash"; }
+.language-ruby::before { content: "Ruby"; }
+
+[class^="language-"]::before {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 0.75rem;
+  color: #8b949e;
+  font-family: 'JetBrains Mono', monospace;
+}
+/*Para los pantallazos de bloques de codigo*/
+/*Para el badge de HTB*/
 .htb-badge {
   padding: 20px 10px;
   display: flex;
