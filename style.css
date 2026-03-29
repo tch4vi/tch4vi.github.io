@@ -305,15 +305,25 @@ li code {
 }
 
 /*Para los pantallazos de bloques de codigo*/
-pre, .highlight {
-  background: #161b22 !important;  /* un poco más claro que el body */
+.highlight {
+  background: #161b22 !important;
   border: 1px solid #30363d;
   border-radius: 8px;
-  padding: 1rem 1.2rem;
+  padding: 0;
+  margin: 1.5rem 0;
+  position: relative;
+  overflow: hidden;
 }
 
-.highlight {
-  position: relative;
+.highlight pre {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  padding: 1rem 1.2rem;
+  margin: 0;
+  max-height: 400px;
+  overflow-y: auto;
+  overflow-x: auto;
 }
 
 .language-python::before { content: "Python"; }
