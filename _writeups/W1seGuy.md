@@ -160,12 +160,15 @@ for i in range(4):
     key_part += chr(encoded[i] ^ ord(known[i]))
 ```
 
-In the for loop, we iterate 4 times, one for each character from "THM{"
+In the for loop, we iterate 4 times, one for each character from "THM{".
 ``Key_part`` is the empty string that we stated above and it will add every character that fits our conditions
 
 ``chr(encoded[i])`` -> Byte 'i' from the encoded message, for example:
+
 ``encoded[i] = byte from flag[i] XOR key[i]``
+
 ``encoded[i] = byte from 'T' XOR key[0]``
+
 ``chr`` converts the number back to a characters. If the result is 57, ``chr(57) = '9'``
 
 
