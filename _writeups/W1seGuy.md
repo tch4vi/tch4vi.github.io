@@ -88,7 +88,8 @@ Another important thing, it's not just XOR encoding, it's HEX encoded aswell, I 
 
 Therefore the full process is: plain text -->key-> XOR --> HEX --> ``012b78341f640259211b101b410e1b215756240c140d477c0e392f4c273a27174c7f1a271b7a3d12``
 
-This is considered a "5 minute hack" but it took me a bit to complete it, my python skills are a bit rusty but we made it, that's all that matters, I wrote the following script:
+This is considered a "5 minute hack" but it took me a bit to complete it, my python skills are a bit rusty but we made it.
+I wrote the following script:
 
 ```python
 import string
