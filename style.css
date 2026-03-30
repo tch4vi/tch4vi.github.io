@@ -326,18 +326,6 @@ li code {
   overflow-x: auto;
 }
 
-.language-python::before { content: "Python"; }
-.language-bash::before { content: "Bash"; }
-.language-ruby::before { content: "Ruby"; }
-
-[class^="language-"]::before {
-  position: absolute;
-  top: 8px;
-  right: 12px;
-  font-size: 0.75rem;
-  color: #8b949e;
-  font-family: 'JetBrains Mono', monospace;
-}
 .highlight pre::-webkit-scrollbar {
   width: 6px;
   height: 6px;
