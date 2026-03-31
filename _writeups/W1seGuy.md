@@ -186,7 +186,7 @@ And when you merge both functions, is where the magic happens:
 
 flag XOR key = encoded <-- What the server did
 
-encoded XOR flag = key <-- What do we do
+encoded XOR flag = key <-- What we do
 
 We know ``encoded[i]`` (was provided by the server) and we know ``flag[i]`` (it's 'THM{'), then we can discover ``key[i]``
 Example with the first character
