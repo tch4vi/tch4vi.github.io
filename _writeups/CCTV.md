@@ -254,7 +254,7 @@ And it worked perfectly. I'm in with root privileges. I can run straight to all 
 
 ![CCTV](/assets/CCTV/whoami.png)
 
-![CCTV](/assets/CCTV/userflag.png])
+![CCTV](/assets/CCTV/userflag.png)
 
 User flag-->
 
