@@ -4,7 +4,7 @@ title: "CCTV"
 date: 2026-07-12
 platform: HackTheBox
 description: "CCTV` is an easy difficulty machine that features various CCTV monitoring software. Initial access is obtained by exploiting a boolean-based SQL injection in `Zoneminder` (CVE-2024-51482). After dumping the application's database, cracked user credentials are found to be reused, providing a terminal on the machine. Next, sniffing the traffic between running Docker containers reveals unencrypted credentials for another user. Finally, privilege escalation is achieved by bypassing a client-side JavaScript validation check and achieving remote code execution in `MotionEye` (CVE-2025-60787), resulting in root access."
-image: /assets/CCTV/CCTV.png
+image: /assets/CCTV/CCTVLogo.png
 ---
 
 On today's hacking i've been working on a machine called CCTV, it's an "easy" not so "easy" Linux machine from HackTheBox. This is an active machine so the paper i'm about to write will be published once the machine is retired so it doesn't affect the current season of HackTheBox.
