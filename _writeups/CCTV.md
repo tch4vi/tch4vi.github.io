@@ -252,22 +252,22 @@ Start listening port 4444 -->
 
 And it worked perfectly. I'm in with root privileges. I can run straight to all the flags and complete the machine
 
-![[tch4vi.github/Writeups/CCTV/Images/whoami.png]]
+![CCTV](/assets/CCTV/whoami.png)
 
-![[tch4vi.github/Writeups/CCTV/Images/userflag.png]]
+![CCTV](/assets/CCTV/userflag.png])
 
 User flag-->
 
 ``b94f59d170316ea243a13e7fac489b42``
 
 
-![[tch4vi.github/Writeups/CCTV/Images/rootflag.png]]
+![CCTV](/assets/CCTV/rootflag.png)
 
 Root flag -->
 
 ``07763013af6bec48a91cd937b657c306``
 
 
-![[machinesolved.png]]
+![CCTV](/assets/CCTV/machinesolved.png)
 
 Learned a lot from this machine. Always a pleasure playing on HackTheBox. Grinding :]
