@@ -1,10 +1,10 @@
 ---
 layout: writeup
-title: "Soulmate"
-date: 2026-02-19
+title: "CCTV"
+date: 2026-07-12
 platform: HackTheBox
-description: "Soulmate is an easy difficulty Linux machine that showcases exploitation of [CVE-2025-31161](https://nvd.nist.gov/vuln/detail/CVE-2025-31161), an authentication bypass vulnerability in CrushFTP, allowing players to access an admin user account. By uploading a malicious PHP file to the application's web root, remote command execution is achieved. For privilege escalation, [CVE-2025-32433](https://nvd.nist.gov/vuln/detail/CVE-2025-32433), another remote command execution vulnerability in the Erlang/OTP SSH server is being exploited to gain `root` access."
-image: /assets/Soulmate/soulmatelogo.png
+description: "CCTV` is an easy difficulty machine that features various CCTV monitoring software. Initial access is obtained by exploiting a boolean-based SQL injection in `Zoneminder` (CVE-2024-51482). After dumping the application's database, cracked user credentials are found to be reused, providing a terminal on the machine. Next, sniffing the traffic between running Docker containers reveals unencrypted credentials for another user. Finally, privilege escalation is achieved by bypassing a client-side JavaScript validation check and achieving remote code execution in `MotionEye` (CVE-2025-60787), resulting in root access."
+image: /assets/CCTV/CCTV.png
 ---
 
 On today's hacking i've been working on a machine called CCTV, it's an "easy" not so "easy" Linux machine from HackTheBox. This is an active machine so the paper i'm about to write will be published once the machine is retired so it doesn't affect the current season of HackTheBox.
