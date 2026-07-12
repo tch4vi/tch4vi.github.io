@@ -89,7 +89,7 @@ With the false camera created, I captured the packet that is sent when trying to
 To my surprise theres a really big query with a lot of things added here, but I just need the 1 simple request with the ``removetag`` function in it so I reduced from this -->
 
 
-![[burpeventcatch1.png|697]]
+![CCTV](/assets/CCTV/burpeventcatch1.png)
 
 ``/zm/index.php?view=request&request=event&action=removetag&tid=1``
 ``/zm/index.php?view=request&request=event&action=removetag&tid=1&id=1``
