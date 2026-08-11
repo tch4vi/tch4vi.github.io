@@ -1,3 +1,12 @@
+---
+layout: writeup
+title: "Nexus"
+date: 2026-08-11
+platform: HackTheBox
+description: "`Nexus` is an easy-difficulty Linux machine that features an exposed Gitea repository leaking credentials and a job posting that reveals valid usernames. The leaked credentials provide access to `Krayin CRM`, which is vulnerable to `CVE-2026-38526`, leading to a shell as `www-data`. Further enumeration of the `Krayin CRM` configuration files reveals additional credentials that allow `SSH` access. Service enumeration reveals a `Gitea` template sync service vulnerable to directory traversal, which is leveraged to gain a shell as `root`."
+image: /assets/Nexus/nexuslogo.png
+---
+
 On today's hacking, we are working on a machine labeled as easy on HacktheBox called Nexus. It's a very interesting machine that made me have some headaches on the privesc section. Let's see.
 
 We start with the current meta for CTF's which is the enumeration phase with nmap:
