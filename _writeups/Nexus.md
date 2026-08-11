@@ -55,20 +55,20 @@ Nmap done: 1 IP address (1 host up) scanned in 8.74 seconds
 After adding the domain to our /etc/hosts file we can enter the webpage and see what offer to us the port 80
 
 
-![[nexushtbdomain.png]]
+![Nexus](/assets/Nexus/nexushtbdomain.png)
 
 Seems like a webpage to invest in more reliable sources of energy. There is no relevant panel there, not a single button that leads to a different page to login, or check opinions or anything, but at the end of the web there is a button to apply for a position and there is an email specified there
 
 ``j.matthew@nexus.htb``
 
 
-![[mail.png]]
+![Nexus](/assets/Nexus/mail.png)
 
 Taking notes about that, we might need this email in following steps.
 
 Used Wappalyzer to check the web technologies but didn't had any luck on that, couldn't find anything relevant
 
-![[tch4vi.github/Writeups/Nexus/Images/wappalyzer.png]]
+![Nexus](/assets/Nexus/wappalyzer.png)
 
 ```bash 
 ┌─[tch4vi@parrot]─[~/Documents/Nexus]
@@ -164,7 +164,7 @@ Here we got something, if you pay attention to the last line -->
 I added the subdomain to my /etc/hosts file and went straight to it to see what it has to offer
 
 
-![[krayinlogin.png]]
+![Nexus](/assets/Nexus/krayinlogin.png)
 
 We got the email, but not the password. Tried with burpsuite checking the "Forget Password" function to see if I can do anything on that. No luck.
 Also did a small research to check if there is any current CVE that allows unauthenticated users to access on Krayin, but all the ones I saw require a previous login.
@@ -203,29 +203,29 @@ ________________________________________________
 
 I exported it into a file because the idea of checking the results given just by the input was kinda dumb.
 
-![[enumeration.png]]
+![Nexus](/assets/Nexus/enumeration.png)
 
-![[enumeration2.png]]
+![Nexus](/assets/Nexus/enumeration2.png)
 
 With this deeper directory fuzzing I found another subdomain called "git"
 
-![[giteadomain.png]]
+![Nexus](/assets/Nexus/giteadomain.png)
 
 Maybe here we can find the password I need for the Krayin platform.
 
 
-![[gitecrawling4.png]]
+![Nexus](/assets/Nexus/gitecrawling4.png)
 
 It's identical to github. I explored the files that are in the repository and there is quite good hints
 
-![[giteacrawling.png]]
+![Nexus](/assets/Nexus/giteacrawling.png)
 
 
-![[giteacrawling2.png]]
+![Nexus](/assets/Nexus/giteacrawling2.png)
 
 The ${DB_PASSWORD}, made me think maybe, there are commits that allow me to see previous versions of the repository where sensitive data might be in plain text:
 
-![[giteacrawling3.png]]
+![Nexus](/assets/Nexus/giteacrawling3.png)
 
 bingo! We got the password ``N27xh!!2ucY04``
 I went to the Krayin platform, and logged in with the following credentials:
@@ -234,7 +234,7 @@ Email: j.matthew@nexus.htb
 Password: N27xh!!2ucY04
 
 
-![[krayindashboard.png]]
+![Nexus](/assets/Nexus/krayindashboard.png)
 
 I've did a small investigation in order to find any possible vulnerability on Krayin platform. Found this -->
 https://github.com/cybercrewinc/CVE-2026-36340
@@ -437,28 +437,28 @@ function printit ($string) {
 
 With that file created compose a mail and attach it.
 
-![[maliciousmail2.png]]
+![Nexus](/assets/Nexus/maliciousmail2.png)
 
 Before uploading our malicious file, we start burping with burp-suite. Thanks to the CVE-2026-36340, we know that we can identify the path where the file is being stored inside the victim machine
 
-![[burpnexus.png]]
+![Nexus](/assets/Nexus/burpnexus.png)
 
 Here we go
 
-![[burpnexus2.png]]
+![Nexus](/assets/Nexus/burpnexus2.png)
 
 Now we access it while we have our attacker machine listening to the port we specified, in my case, port 4444
 
-![[billingdomain.png]]
+![Nexus](/assets/Nexus/billingdomain.png)
 
 
-![[nclisten.png]]
+![Nexus](/assets/Nexus/nclisten.png)
 
 Bingo!
 
 Moving arround the config files we find the .env file that contains the database credentials. We got the username Krayin and it's password.
 
-![[dbpass.png]]
+![Nexus](/assets/Nexus/dbpass.png)
 
 We know it's the database user, but it's worth the try trying to change to that user.
 
@@ -774,9 +774,9 @@ So we went to the git.nexus.htb and logged in as jones with the password we alre
 We created one repository with the name "rce" and checking the option "template - Make repository a template"
 
 
-![[repoempty.png]]
+![Nexus](/assets/Nexus/repoempty.png)
 
-![[repotemplate.png]]
+![Nexus](/assets/Nexus/repotemplate.png)
 
 
 We plan to upload our ssh-key abusing this vulnerability so, in our atacking machine we create a ssh-key in /tmp/.k and we git clone the repository.
@@ -891,7 +891,7 @@ rama 'main' configurada para rastrear 'origin/main'.
 
 After pushing, we need to wait for the template sync timer to start.
 
-![[catsync.png]]
+![Nexus](/assets/Nexus/catsync.png)
 
 After that, we can try to ssh with root, as we uploaded our ssh-key.
 
@@ -906,5 +906,5 @@ d117cea4d5677bc6e6e385360058d82a
 ```
 
 
-![[nexuspwned.png]]
+![Nexus](/assets/Nexus/nexuspwned.png)
 
