@@ -14,7 +14,7 @@ We start with the current meta for CTF's which is the enumeration phase with nma
 
 ```bash
 ┌─[tch4vi@parrot]─[~/Documents/Nexus]
-└──╼ $sudo nmap -p- --min-rate=500 -Pn -n -sS 10.129.43.109 -oN ports1
+└──╼ $sudo nmap -p- --min-rate=5000 -Pn -n -sS 10.129.43.109 -oN ports1
 Starting Nmap 7.95 ( https://nmap.org ) at 2026-07-12 09:20 CEST
 Nmap scan report for 10.129.43.109
 Host is up (0.038s latency).
