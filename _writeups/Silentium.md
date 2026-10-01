@@ -51,9 +51,9 @@ Nmap done: 1 IP address (1 host up) scanned in 14.37 seconds
 
 We got the "http://silentium.htb" site:
 
-![[silentium.png]]
+![Silentium](/assets/Silentium/silentium.png)
 
-![[silentium2.png]]
+![Silentium](/assets/Silentium/silentium2.png)
 
 Initially, we cannot do much in the web page, not much information we can retrieve, no emails, no contact information... Tried manually some subdomains like http://portal.silentium.htb or http://silentium.htb/login, but no luck.
 
@@ -90,14 +90,14 @@ staging                 [Status: 200, Size: 3142, Words: 789, Lines: 70, Duratio
 
 That's a better way to find domains, in this case we got: ``staging``, which seems like a login page for members. One interesting detail is in the field "Email" which is filled with "user@company.com". I guess the company here will be Silentium, so maybe with @silentium.com or @silentium.htb. The only thing left is the user.
 
-![[staging.png]]
+![Silentium](/assets/Silentium/staging.png)
 
-![[flowisefavicon.png]]
+![Silentium](/assets/Silentium/flowisefavicon.png)
 
 I'm not very familiar to what is Flowise or anything, so I tried to search some information on internet. Seems like is an open-source platform for building AI agents using a visual editor instead of writing all the code by hand.
 That's interesting what doesn't give us much window of attack this information. Let's dig a bit with wappalyzer and whatweb to know the technologies behind.
 
-![[tch4vi.github/Writeups/Silentium/Images/wappalyzer.png]]
+![Silentium](/assets/Silentium/wappalyzer.png)
 
 ```bash
 ┌─[tch4vi@parrot]─[~/Documents/Silentium/Silentiumv2]
@@ -119,10 +119,10 @@ I wanted to check if I could get any information similar to the technologies use
 
 Given the situation, the only thing that we can access is the "Forgot Password" section where it sends an automated email to any existing user. I tried already with one random email but, if the user doesn't exist, the email is not sent.
 
-![[forgotpassword.png]]
+![Silentium](/assets/Silentium/forgotpassword.png)
 
 
-![[mailfail2.png]]
+![Silentium](/assets/Silentium/mailfail2.png)
 
 Let's keep fuzzing with feroxbuster this time, let's see if we get any other information like the version of the Flowise app:
 
@@ -276,21 +276,21 @@ We know that the domain account is most certanly @silentium.htb, and, on the mai
 
 
 
-![[users.png]]
+![Silentium](/assets/Silentium/users.png)
 
 
-![[benemail.png]]
+![Silentium](/assets/Silentium/benemail.png)
 
 Good! And while sniffing with Burpsuite we can see the TempToken:
 
-![[burping2.png]]
+![Silentium](/assets/Silentium/burping2.png)
 
 Now we can easily change the password of the user Ben and access the application.
 
-![[resetpassword.png]]
+![Silentium](/assets/Silentium/resetpassword.png)
 
 
-![[flowiseinside.png]]
+![Silentium](/assets/Silentium/flowiseinside.png)
 
 Climbed through the application with the user Ben, our next step is discover where is the gap to get the reverse shell. So now that we have access to the application, maybe we unlocked some new CVE's to exploit and gain this access, so as the previous step, did a quick search on Internet and found CVE-2025-59528.
 
@@ -476,13 +476,13 @@ server {
 
 We add this domain to our hosts file and try to access it to see what do we have: 
 
-![[gogs.png]]
+![Silentium](/assets/Silentium/gogs.png)
 
 Seems like another Git alike page, and that brings back some tough memories of the previous writeup about the Nexus machine...
 
 Before doing anything, let's try to register and access, maybe we can see some repositories that give us more information:
 
-![[gogsrepos.png]]
+![Silentium](/assets/Silentium/gogsrepos.png)
 
 Nothing.
 
@@ -502,7 +502,7 @@ The attacker (us) creates a symbolic link inside a repository pointing to a file
 If Gogs is running with root privileges, this can be abused to modify root-owned files, such as ``/root/.ssh/authorized_keys``, ultimately allowing the attacker (us) to obtain a root ssh session.
 
 
-![[newrepo2.png]]
+![Silentium](/assets/Silentium/newrepo2.png)
 
 We create a new repository and then clone it locally
 
@@ -536,7 +536,7 @@ Unpacking objects: 100% (3/3), 238 bytes | 238.00 KiB/s, done.
 
 We got the blob, now it's time to get the API Token:
 
-![[newtoken.png]]
+![Silentium](/assets/Silentium/newtoken.png)
 
 
 Our token --> ``ab86354f82913cb7fa9cb1d4485c8913d766d12b``
@@ -694,4 +694,4 @@ d050bf28add5a33e68b4d6c2417995bb
 And we got the flag.
 Being completely honest, I pwned this machine 2 times already, because, on the first run I completed it exploiting the vulnerabilities with the public POC's and that felt so Script Kiddish, I wanted to understand all the vulnerabilities and correctly and that's why I did a re-run. I complete machines and my weakest point is the privesc thing, I need to train more in this aspect.
 
-![[tch4vi.github/Writeups/Silentium/Images/pwned.png]]
+![Silentium](/assets/Silentium/pwned.png)
