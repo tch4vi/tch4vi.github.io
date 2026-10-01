@@ -1,3 +1,12 @@
+---
+layout: writeup
+title: "Silentium"
+date: 2026-09-23
+platform: HackTheBox
+description: "Silentium is an easy-difficulty Linux machine that begins with discovering a Flowise instance on a staging subdomain. The application is running a version vulnerable to CVE-2025-58434, an unauthenticated password reset token disclosure that leads to account takeover. With access to Flowise, CVE-2025-59528 is exploited via the CustomMCP node to achieve remote code execution inside a Docker container. Environment variables exposed within the container reveal SSH credentials for the user ben on the host. Further enumeration reveals a Gogs instance on an internal vhost, running a version vulnerable to CVE-2025-8110, which allows an authenticated user to abuse symbolic links via the API to overwrite arbitrary files. This is leveraged to write an SSH public key to root's authorized_keys file, granting a shell as root."
+image: /assets/Silentium/Silentiumlogo.png
+---
+
 On today's hacking we are working on a machine called Silentium. It's a machine from HackTheBox labelled as "Easy" that it has some interesting CVE's to work on. Let's jump on it.
 
 We start with the all-time meta of the enumeration process which is using nmap:
