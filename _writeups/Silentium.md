@@ -318,7 +318,7 @@ The Payload is the following one:
 
 ```
 
-We could insert it with Curl but, we can get the API key from Ben's user on Flowise web, but I will use the exploit provided in this public CVE.
+We could insert it with Curl with the API key from Ben's user on Flowise web, but I will use the exploit provided in this public CVE.
 
 So we start listening in another terminal with ``nc -lnvp 4444`` and in a different terminal, after cloning the github repository we build the command specifying our IP, the listening port, the email account from Ben and the new password:
 
@@ -395,7 +395,7 @@ drwxr-xr-x    1 root     root          4096 Jul 15  2025 var
 
 ```
 
-Knowing that there is a ``dockerenv`` file allows us to run the command ``env`` which shows us multiple passwords, included Ben's password ``SMTP_PASSWORD=r04D!!_R4ge``.
+Knowing that there is a ``dockerenv`` file that allows us to run the command ``env`` which shows us multiple passwords, included Ben's password ``SMTP_PASSWORD=r04D!!_R4ge``.
 
 Now we can leave this shell and connect via ssh.
 
